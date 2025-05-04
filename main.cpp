@@ -1,8 +1,19 @@
 #include <iostream>
+#include <stdexcept>
 #include <string>
 #include <cstdlib>
+#include <thread>
 
-static void banner()
+/* DOCUMENTATION
+    * exit(0) - EXIT SUCCESS
+    * exit(1) - EXIT FAILURE
+    * std::cout << string; - CHARACTER OUTPUT
+    * std::getline(...) - READ LINE FROM USER
+    * std::stoi(string) - CONVERT STRING TO INTEGER
+    * If you're reading this section, you may want to make a pull request to expand it
+*/
+
+void banner()
 {
     const char* banner = R"(
                   .__   __  .__  __                .__                           
@@ -16,17 +27,18 @@ static void banner()
     std::cout << banner << "\n";
 }
 
-static void menu()
+void menu()
 {
     std::cout << "-- OPTIONS: --\n";
     std::cout << "1. exit\n";
+    std::cout << "2. timer\n";
     std::cout << "--          --\n";
 }
 
-static void read()
+void read()
 {
     std::string input;
-    std::cout << "enter an option: ";
+    std::cout << "Enter an option: ";
     std::getline(std::cin, input);
     std::cout << "You chose: " << input << "\n";
     std::cout << "Validating choice... ";
@@ -34,6 +46,21 @@ static void read()
     {
         std::cout << "Valid choice!\n";
         exit(0);
+    }
+    else if (input == "2") 
+    {
+        std::cout << "Valid choice!\n";
+        std::cout << "Enter a number of seconds: ";
+        std::string seconds;
+        std::getline(std::cin, seconds);
+        int seconds_int = std::stoi(seconds);
+        int timer = seconds_int;
+        while (timer > 0)
+        {
+            std::cout << timer << "\n";
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            timer--;
+        }
     }
     else 
     {
