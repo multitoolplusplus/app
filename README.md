@@ -9,9 +9,9 @@ C++ Compiler (if you won't use a precompiled binary)
 
 An Operating System
 
-Downloading the source code (using `git clone` for development build or downloading it from GitHub releases for stable build)
-
 ### Using a compiler
+You will first have to download the source code. We recommend using a GitHub release for stability.
+
 It's as simple as compiling main.cpp. For example if you are on Windows and are using G++:
 ```powershell
 g++ -o main.exe main.cpp
