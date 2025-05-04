@@ -21,3 +21,7 @@ You can easily download and run a precompiled binary from the releases.
 
 ## Source Code
 The software is fully open source and copylefted under the [GNU GPL v3.0](./LICENSE).
+
+# FAQ
+**Q**: It's detected as malware by Antivirus!
+**A**: Antivirus engines will probably flag files that barely do anything.
