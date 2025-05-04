@@ -1,0 +1,35 @@
+name: Build and Upload Binary
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up a C++ compiler
+      - name: Set up C++ compiler
+        uses: actions/setup-cpp@v2
+        with:
+          compiler: gcc
+
+      # Step 3: Compile the main.cpp file
+      - name: Build main.cpp
+        run: |
+          g++ -o main main.cpp
+
+      # Step 4: Upload the compiled binary as an artifact
+      - name: Upload binary to tag
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./main
+          asset_name: main
+          asset_content_type: application/octet-stream
