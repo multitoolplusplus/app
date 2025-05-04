@@ -14,11 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up a C++ compiler
-      - name: Set up C++ compiler
-        uses: actions/setup-cpp@v0.37.0
-        with:
-          compiler: gcc
+      # Step 2: Install build essentials for Linux
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential
 
       # Step 3: Compile the main.cpp file
       - name: Build main.cpp
@@ -42,11 +42,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up a C++ compiler
-      - name: Set up C++ compiler
-        uses: actions/setup-cpp@v0.37.0
-        with:
-          compiler: msvc
+      # Step 2: Install MSVC build tools
+      - name: Install MSVC tools
+        run: |
+          # MSVC compiler is pre-installed on windows-latest runner, no additional setup required.
 
       # Step 3: Compile the main.cpp file
       - name: Build main.cpp
