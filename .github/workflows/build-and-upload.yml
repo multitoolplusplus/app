@@ -16,7 +16,7 @@ jobs:
 
       # Step 2: Set up a C++ compiler
       - name: Set up C++ compiler
-        uses: actions/setup-cpp@v2
+        uses: actions/setup-cpp@v0.37.0
         with:
           compiler: gcc
 
@@ -44,7 +44,7 @@ jobs:
 
       # Step 2: Set up a C++ compiler
       - name: Set up C++ compiler
-        uses: actions/setup-cpp@v2
+        uses: actions/setup-cpp@v0.37.0
         with:
           compiler: msvc
 
