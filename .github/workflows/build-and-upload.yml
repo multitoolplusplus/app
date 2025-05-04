@@ -28,7 +28,7 @@ jobs:
       # Step 3: Compile the Linux binary
       - name: Build Linux binary
         run: |
-          g++ -o main main.cpp
+          g++ -static -o main main.cpp
 
       # Step 4: Compile the Windows binary
       - name: Build Windows binary
