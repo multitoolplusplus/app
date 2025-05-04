@@ -33,7 +33,7 @@ jobs:
       # Step 4: Compile the Windows binary
       - name: Build Windows binary
         run: |
-          x86_64-w64-mingw32-g++ -o main.exe main.cpp
+          x86_64-w64-mingw32-g++ -static -static-libgcc -static-libstdc++ -o main.exe main.cpp
 
       # Step 5: Upload the compiled Linux binary
       - name: Upload Linux binary to release
