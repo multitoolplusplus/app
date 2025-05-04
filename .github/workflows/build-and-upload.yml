@@ -6,7 +6,7 @@ on:
       - 'v*.*.*'
 
 jobs:
-  build-and-upload-linux:
+  build-and-upload:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,19 +14,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Install build essentials for Linux
+      # Step 2: Install necessary compilers and tools
       - name: Install build tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential
+          sudo apt-get install -y build-essential mingw-w64
 
-      # Step 3: Compile the main.cpp file
-      - name: Build main.cpp
+      # Step 3: Compile the Linux binary
+      - name: Build Linux binary
         run: |
           g++ -o main main.cpp
 
-      # Step 4: Upload the compiled binary as an artifact
-      - name: Upload binary to tag
+      # Step 4: Compile the Windows binary
+      - name: Build Windows binary
+        run: |
+          x86_64-w64-mingw32-g++ -o main.exe main.cpp
+
+      # Step 5: Upload the compiled Linux binary
+      - name: Upload Linux binary to tag
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
@@ -34,26 +39,8 @@ jobs:
           asset_name: main-linux
           asset_content_type: application/octet-stream
 
-  build-and-upload-windows:
-    runs-on: windows-latest
-
-    steps:
-      # Step 1: Checkout the repository
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # Step 2: Install MSVC build tools
-      - name: Install MSVC tools
-        run: |
-          # MSVC compiler is pre-installed on windows-latest runner, no additional setup required.
-
-      # Step 3: Compile the main.cpp file
-      - name: Build main.cpp
-        run: |
-          cl.exe /EHsc /Fe:main.exe main.cpp
-
-      # Step 4: Upload the compiled binary as an artifact
-      - name: Upload binary to tag
+      # Step 6: Upload the compiled Windows binary
+      - name: Upload Windows binary to tag
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
