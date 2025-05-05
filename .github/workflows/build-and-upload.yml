@@ -87,10 +87,13 @@ jobs:
       # Step 10: Append VirusTotal links to the release body
       - name: Append VirusTotal links to the release body
         uses: actions/github-script@v6
+        env:
+          LINUX_VT: ${{ steps.vt_linux.outputs.link }}
+          WINDOWS_VT: ${{ steps.vt_windows.outputs.link }}
         with:
           script: |
-            const linuxVT = '${{ steps.vt_linux.outputs.link }}';
-            const windowsVT = '${{ steps.vt_windows.outputs.link }}';
+            const linuxVT = process.env.LINUX_VT;
+            const windowsVT = process.env.WINDOWS_VT;
 
             const { data: release } = await github.rest.repos.getRelease({
               owner: context.repo.owner,
@@ -101,6 +104,7 @@ jobs:
             const updatedBody = `${release.body || ""}
 
 ---
+
 🛡 **VirusTotal Scan Results**
 - [Linux binary scan](${linuxVT})
 - [Windows binary scan](${windowsVT})`;
