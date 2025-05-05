@@ -1,0 +1,42 @@
+name: Close Non-Compliant Issues
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  close_non_compliant_issues:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if the issue follows the template
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const core = require("@actions/core");
+            const github = require("@actions/github");
+
+            const issueBody = github.context.payload.issue.body;
+
+            // Define a condition to check if the issue follows the template
+            // For example, check for a specific keyword or structure
+            const templateKeywords = ["**Describe the bug**", "**Is your feature request related to a problem? Please describe.**", "**Describe the vulnerability**"];
+            const isCompliant = templateKeywords.some(keyword => issueBody.includes(keyword));
+
+            if (!isCompliant) {
+              // Close the issue and leave a comment
+              await github.rest.issues.update({
+                owner: github.context.repo.owner,
+                repo: github.context.repo.repo,
+                issue_number: github.context.payload.issue.number,
+                state: "closed",
+              });
+
+              await github.rest.issues.createComment({
+                owner: github.context.repo.owner,
+                repo: github.context.repo.repo,
+                issue_number: github.context.payload.issue.number,
+                body: "This issue does not follow the required template and has been automatically closed. Please ensure your issue follows the template and reopen it."
+              });
+            }
