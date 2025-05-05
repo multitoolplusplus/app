@@ -66,9 +66,7 @@ jobs:
           echo "$response" > vt_linux_response.json
           ANALYSIS_ID=$(echo "$response" | jq -r '.data.id')
           LINK="https://www.virustotal.com/file/${ANALYSIS_ID}/analysis/"
-          echo "linux_link=$LINK" >> $GITHUB_ENV
-        env:
-          VT_API_KEY: ${{ secrets.VT_API_KEY }}
+          echo "LINUX_VT=$LINK" >> $GITHUB_ENV
 
       # Step 9: Submit Windows binary to VirusTotal
       - name: Submit Windows binary to VirusTotal
@@ -82,17 +80,15 @@ jobs:
           echo "$response" > vt_windows_response.json
           ANALYSIS_ID=$(echo "$response" | jq -r '.data.id')
           LINK="https://www.virustotal.com/file/${ANALYSIS_ID}/analysis/"
-          echo "windows_link=$LINK" >> $GITHUB_ENV
-        env:
-          VT_API_KEY: ${{ secrets.VT_API_KEY }}
+          echo "WINDOWS_VT=$LINK" >> $GITHUB_ENV
 
       # Step 10: Append VirusTotal links to the release body
       - name: Append VirusTotal links to the release body
         uses: actions/github-script@v6
         with:
           script: |
-            const linuxVT = process.env.linux_link;
-            const windowsVT = process.env.windows_link;
+            const linuxVT = process.env.LINUX_VT;
+            const windowsVT = process.env.WINDOWS_VT;
 
             // Get the release details
             const { data: release } = await github.rest.repos.getRelease({
@@ -103,7 +99,6 @@ jobs:
 
             // Update the release body with VirusTotal scan links
             const updatedBody = `${release.body || ""}
-
 
             🛡 **VirusTotal Scan Results**
             - [Linux binary scan](${linuxVT})
