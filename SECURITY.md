@@ -10,4 +10,4 @@ These are the currently supported versions of the project.
 
 ## Reporting a Vulnerability
 
-You can report vulnerabilities using our vulnerability issue template. If you know a fix, you may submit a Pull Request to fix it.
+You can report vulnerabilities using our vulnerability issue template. If you know a fix, you may submit a pull request to fix it.
