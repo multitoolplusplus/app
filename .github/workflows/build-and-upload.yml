@@ -87,9 +87,6 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const linuxVT = process.env.LINUX_VT;
-            const windowsVT = process.env.WINDOWS_VT;
-
             // Get the release details
             const { data: release } = await github.rest.repos.getRelease({
               owner: context.repo.owner,
@@ -100,9 +97,11 @@ jobs:
             // Update the release body with VirusTotal scan links
             const updatedBody = `${release.body || ""}
 
+            Unsure about the legitimacy of the files? See the [workflow](https://github.com/benja2998/multitoolplusplus/blob/main/.github/workflows/build-and-upload.yml) to see they weren't tampered with!
+            
             🛡 **VirusTotal Scan Results**
-            - [Linux binary scan](${linuxVT})
-            - [Windows binary scan](${windowsVT})`;
+            - [Linux binary scan](https://virustotal.com)
+            - [Windows binary scan](https://virustotal.com)`;
 
             // Update the release with new body content
             await github.rest.repos.updateRelease({
