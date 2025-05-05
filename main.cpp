@@ -9,8 +9,24 @@
     * std::cout << string; - CHARACTER OUTPUT
     * std::getline(...) - READ LINE FROM USER
     * std::stoi(string) - CONVERT STRING TO INTEGER
+    * system(...) - RUN A SYSTEM COMMAND
+    * console::clear() - CLEAR THE CONSOLE
     * If you're reading this section, you may want to make a pull request to expand it
 */
+
+namespace console {
+    void clear() {
+#ifdef _WIN32
+        system("cls");
+#elif defined(__linux__) || defined(__APPLE__) || defined(__unix__)
+        system("clear");
+#else
+        exit(10)
+#endif
+    }
+}
+
+void initialize();
 
 void banner()
 {
@@ -60,6 +76,7 @@ void read()
             std::this_thread::sleep_for(std::chrono::seconds(1));
             timer--;
         }
+        initialize();
     }
     else 
     {
@@ -68,12 +85,18 @@ void read()
     }
 }
 
-int main()
+void initialize()
 {
+    console::clear();
     std::cout << "Hello from Multitool++!\n";
     std::cout << "C++ is a great language!\n";
 
     banner();
     menu();
     read();
+}
+
+int main()
+{
+    initialize();
 }
