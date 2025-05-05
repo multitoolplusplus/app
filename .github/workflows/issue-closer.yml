@@ -14,42 +14,35 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            if (typeof core === "undefined") {
-            const core = require("@actions/core");
-            }
-              if (typeof github === "undefined") {
-              const github = require("@actions/github");
-            }
+            const issue = context.payload.issue;
 
-            // Check if the issue exists in the payload
-            if (!github.context.payload.issue) {
+            if (!issue) {
               core.setFailed("This workflow can only be triggered by issue events.");
               return;
             }
 
-            const issueBody = github.context.payload.issue.body;
+            const issueBody = issue.body || "";
 
-            // Define a condition to check if the issue follows the template
             const templateKeywords = [
-            "**Describe the bug**",
-            "**Is your feature request related to a problem? Please describe.**",
-             "**Describe the vulnerability**"
+              "**Describe the bug**",
+              "**Is your feature request related to a problem? Please describe.**",
+              "**Describe the vulnerability**"
             ];
+
             const isCompliant = templateKeywords.some(keyword => issueBody.includes(keyword));
 
             if (!isCompliant) {
-            // Close the issue and leave a comment
-            await github.rest.issues.update({
-              owner: github.context.repo.owner,
-              repo: github.context.repo.repo,
-              issue_number: github.context.payload.issue.number,
-              state: "closed",
-            });
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: "closed",
+              });
 
-            await github.rest.issues.createComment({
-              owner: github.context.repo.owner,
-              repo: github.context.repo.repo,
-              issue_number: github.context.payload.issue.number,
-              body: "This issue does not follow the required template and has been automatically closed. Please ensure your issue follows the template and reopen it."
-            });
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: "This issue does not follow the required template and has been automatically closed. Please ensure your issue follows the template and reopen it."
+              });
             }
