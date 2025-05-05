@@ -9,7 +9,7 @@ git clone https://github.com/<your_username>/multitoolplusplus # assuming you di
 ```
 Alternatively, you can edit files directly from the web interface!
 
-You can do things like: adding new functionality, fixing bugs, fixing vulnerabilities, etc.
+You can do things like: adding new functionality, fixing bugs, fixing vulnerabilities, etc. Please remember to also use meaningful commit messages.
 ## Code Style
 - Follow the code style in this repository.
 - Use meaningful variable and function names.
