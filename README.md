@@ -2,6 +2,9 @@
 
 # Cross platform multitool written in C++
 
+## IMPORTANT ANNOUNCEMENT
+As of this being wrote, our Windows binary is currently detected by 11 antivirus engines on VirusTotal. If you have the time, please report this as a false positive!
+
 ## Installation
 
 ### Prerequisites
