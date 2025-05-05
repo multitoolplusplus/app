@@ -4,7 +4,7 @@
 
 ## IMPORTANT ANNOUNCEMENT
 ![image](https://github.com/user-attachments/assets/47d9ef92-4ac4-4f0f-a5b5-31a59ee4c978)
-As of this being wrote, our Windows binary is currently detected by 7 antivirus engines on VirusTotal. If you have the time, please report this as a false positive! The program is NOT malware, see the AnyRun report [here.](https://web.archive.org/web/20250505193713/https://any.run/report/bfeb2d8a414bfedc9124072c483acee0a62a9c4f28174ef483b97fba27165b2f/248a5c03-3969-4b37-833a-00c973f34281) <!-- using web archive because anyrun public reports get deleted after 2 weeks -->
+As of this being wrote, our Windows binary is currently detected by multiple antivirus engines on VirusTotal. If you have the time, please report this as a false positive! The program is NOT malware, see the AnyRun report [here.](https://web.archive.org/web/20250505193713/https://any.run/report/bfeb2d8a414bfedc9124072c483acee0a62a9c4f28174ef483b97fba27165b2f/248a5c03-3969-4b37-833a-00c973f34281) <!-- using web archive because anyrun public reports get deleted after 2 weeks -->
 
 ## Installation
 
