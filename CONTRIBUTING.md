@@ -7,7 +7,7 @@ You may want to clone your fork locally:
 ```bash
 git clone https://github.com/<your_username>/multitoolplusplus # assuming you didn't change the name
 ```
-Alternatively, you can edit files directly from the web interface!
+Alternatively, you can edit files directly from the web interface.
 
 You can do things like: adding new functionality, fixing bugs, fixing vulnerabilities, etc. Please remember to also use meaningful commit messages.
 ## Code Style
