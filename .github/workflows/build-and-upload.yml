@@ -92,15 +92,11 @@ jobs:
             const linuxVT = process.env.LINUX_VT;
             const windowsVT = process.env.WINDOWS_VT;
 
-            const releaseId = context.payload.release.id;
-            const owner = '${{ github.repository_owner }}';  # Correctly injecting context variables
-            const repo = '${{ github.repository }}';  # Correctly injecting context variables
-
             // Get the release details
             const { data: release } = await github.rest.repos.getRelease({
-              owner: owner,
-              repo: repo,
-              release_id: releaseId
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: context.payload.release.id
             });
 
             // Update the release body with VirusTotal scan links
@@ -113,8 +109,8 @@ jobs:
 
             // Update the release with new body content
             await github.rest.repos.updateRelease({
-              owner: owner,
-              repo: repo,
-              release_id: releaseId,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: context.payload.release.id,
               body: updatedBody
             });
