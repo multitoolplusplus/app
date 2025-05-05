@@ -21,7 +21,7 @@ namespace console {
 #elif defined(__linux__) || defined(__APPLE__) || defined(__unix__)
         system("clear");
 #else
-        exit(10)
+        exit(10);
 #endif
     }
 }
@@ -39,40 +39,40 @@ void banner()
       \/                                                                     
 
 )";
-    std::cout << banner << "\n";
+    std::cout << "\033[33m" << banner << "\033[0m\n";
 }
 
 void menu()
 {
-    std::cout << "-- OPTIONS: --\n";
-    std::cout << "1. exit\n";
-    std::cout << "2. timer\n";
-    std::cout << "--          --\n";
+    std::cout << "\033[36m-- OPTIONS: --\033[0m\n";
+    std::cout << "\033[32m1. exit\033[0m\n";
+    std::cout << "\033[32m2. timer\033[0m\n";
+    std::cout << "\033[36m--          --\033[0m\n";
 }
 
 void read()
 {
     std::string input;
-    std::cout << "Enter an option: ";
+    std::cout << "\033[35mEnter an option: \033[0m";
     std::getline(std::cin, input);
-    std::cout << "You chose: " << input << "\n";
+    std::cout << "\033[33mYou chose: \033[0m" << input << "\n";
     std::cout << "Validating choice... ";
     if (input == "1")
     {
-        std::cout << "Valid choice!\n";
+        std::cout << "\033[32mValid choice!\033[0m\n";
         exit(0);
     }
     else if (input == "2") 
     {
-        std::cout << "Valid choice!\n";
-        std::cout << "Enter a number of seconds: ";
+        std::cout << "\033[32mValid choice!\033[0m\n";
+        std::cout << "\033[35mEnter a number of seconds: \033[0m";
         std::string seconds;
         std::getline(std::cin, seconds);
         int seconds_int = std::stoi(seconds);
         int timer = seconds_int;
         while (timer > 0)
         {
-            std::cout << timer << "\n";
+            std::cout << "\033[33m" << timer << "\033[0m\n";
             std::this_thread::sleep_for(std::chrono::seconds(1));
             timer--;
         }
@@ -80,7 +80,7 @@ void read()
     }
     else 
     {
-        std::cout << "Invalid choice.\n";
+        std::cout << "\033[31mInvalid choice.\033[0m\n";
         exit(1);
     }
 }
@@ -88,9 +88,8 @@ void read()
 void initialize()
 {
     console::clear();
-    std::cout << "Hello from Multitool++!\n";
-    std::cout << "C++ is a great language!\n";
-
+    std::cout << "\033[34mHello from Multitool++!\033[0m\n";
+    std::cout << "\033[34mC++ is a great language!\033[0m\n";
     banner();
     menu();
     read();
