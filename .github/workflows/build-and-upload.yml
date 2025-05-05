@@ -18,24 +18,21 @@ jobs:
       - name: Install build tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential mingw-w64 neofetch
+          sudo apt-get install -y build-essential mingw-w64 neofetch jq curl
 
       # Step 3: Run neofetch
       - name: Run neofetch
-        run: |
-          neofetch
+        run: neofetch
 
-      # Step 3: Compile the Linux binary
+      # Step 4: Compile the Linux binary
       - name: Build Linux binary
-        run: |
-          g++ -static -o main main.cpp
+        run: g++ -static -o main main.cpp
 
-      # Step 4: Compile the Windows binary
+      # Step 5: Compile the Windows binary
       - name: Build Windows binary
-        run: |
-          x86_64-w64-mingw32-g++ -static -static-libgcc -static-libstdc++ -o main.exe main.cpp
+        run: x86_64-w64-mingw32-g++ -static -static-libgcc -static-libstdc++ -o main.exe main.cpp
 
-      # Step 5: Upload the compiled Linux binary
+      # Step 6: Upload the compiled Linux binary
       - name: Upload Linux binary to release
         uses: actions/upload-release-asset@v1
         with:
@@ -46,7 +43,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 6: Upload the compiled Windows binary
+      # Step 7: Upload the compiled Windows binary
       - name: Upload Windows binary to release
         uses: actions/upload-release-asset@v1
         with:
@@ -87,23 +84,30 @@ jobs:
         env:
           VT_API_KEY: ${{ secrets.VT_API_KEY }}
 
-      # Step 10: Comment VirusTotal links on the release
-      - name: Comment VirusTotal scan links on the release
+      # Step 10: Append VirusTotal links to the release body
+      - name: Append VirusTotal links to the release body
         uses: actions/github-script@v6
         with:
           script: |
             const linuxVT = '${{ steps.vt_linux.outputs.link }}';
             const windowsVT = '${{ steps.vt_windows.outputs.link }}';
 
-            const body = `
-            🔍 **VirusTotal Scan Links**
-            - [Linux binary scan](${linuxVT})
-            - [Windows binary scan](${windowsVT})
-            `;
+            const { data: release } = await github.rest.repos.getRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: context.payload.release.id
+            });
 
-            await github.rest.repos.createReleaseComment({
+            const updatedBody = `${release.body || ""}
+
+---
+🛡 **VirusTotal Scan Results**
+- [Linux binary scan](${linuxVT})
+- [Windows binary scan](${windowsVT})`;
+
+            await github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
               release_id: context.payload.release.id,
-              body: body
+              body: updatedBody
             });
