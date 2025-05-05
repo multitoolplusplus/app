@@ -96,8 +96,8 @@ jobs:
             const windowsVT = process.env.WINDOWS_VT;
 
             const { data: release } = await github.rest.repos.getRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+              owner: '${{ github.repository_owner }}',  # Use GitHub's context to get owner
+              repo: '${{ github.repository }}',  # Use GitHub's context to get repo
               release_id: context.payload.release.id
             });
 
@@ -110,8 +110,9 @@ jobs:
 - [Windows binary scan](${windowsVT})`;
 
             await github.rest.repos.updateRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+              owner: '${{ github.repository_owner }}', 
+              repo: '${{ github.repository }}', 
               release_id: context.payload.release.id,
               body: updatedBody
             });
+
