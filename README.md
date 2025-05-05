@@ -3,7 +3,7 @@
 # Cross platform multitool written in C++
 
 ## IMPORTANT ANNOUNCEMENT
-As of this being wrote, our Windows binary is currently detected by 11 antivirus engines on VirusTotal. If you have the time, please report this as a false positive!
+As of this being wrote, our Windows binary is currently detected by 11 antivirus engines on VirusTotal. If you have the time, please report this as a false positive! The program is NOT malware, see the AnyRun report [here.](https://web.archive.org/web/20250505173801/https://any.run/report/77d948771944c3f53cae5a9533532d34f66d585ef644efd1e9361004ba758fa6/b7333cd7-23e3-45b3-a42d-6068c788ce3d) <!-- using web archive because anyrun public reports get deleted after 2 weeks -->
 
 ## Installation
 
