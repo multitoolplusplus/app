@@ -7,7 +7,7 @@
 ### Prerequisites
 C++ Compiler (if you won't use a precompiled binary)
 
-Linux or Windows system (you may be able to run the software on MacOS via Wine.)
+Linux or Windows system (you may be able to run the software on MacOS via WINE)
 
 ### Using a compiler
 You will first have to download the source code. We recommend using a GitHub release for stability.
