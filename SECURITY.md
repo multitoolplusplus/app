@@ -5,9 +5,9 @@
 These are the currently supported versions of the project.
 
 | Version | Supported          |
-| ------- | ------------------ |
-| 0.0.x   | ✅                
+| ------- | ------------------ |   
 | 0.1.x   | ✅
+| 0.0.x   | ✅             
 
 ## Reporting a Vulnerability
 
