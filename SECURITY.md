@@ -1,13 +1,13 @@
 # Security Policy
 
-## Supported Versions
+## Status of current versions
 
-These are the currently supported versions of the project.
+This is the status of the current versions of this software.
 
-| Version | Supported          | End Of Life
-| ------- | ------------------ |  -------------- 
-| 0.1.x   | ✅                 |  May 31, 2025
-| 0.0.x   | ✅                 |  May 30, 2025
+| Version | End Of Life
+| ------- |  -------------- 
+| 0.1.x   | May 31, 2025
+| 0.0.x   | May 30, 2025
 
 ## Reporting a Vulnerability
 
