@@ -109,12 +109,6 @@
   <p><strong>A</strong>: Too complicated to implement.</p>
 
   <hr/>
-  <p>&copy; <span id="copyright_year"></span> multitool++ contributors. Licensed under the <a href="./LICENSE">GNU GPL v3.0.</a></p>
-  <script>
-    // get current year to update copyright_year element accordingly
-    const currentYear = new Date().getFullYear();
-
-    document.getElementById('copyright_year').textContent = currentYear;
-  </script>
+  <p>&copy; 2025 multitool++ contributors. Licensed under the <a href="./LICENSE">GNU GPL v3.0.</a></p>
 </body>
 </html>
