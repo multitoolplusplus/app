@@ -30,3 +30,7 @@ The software is fully open source and copylefted under the [GNU GPL v3.0](./LICE
 **Q**: It's detected as malware by Antivirus!
 
 **A**: Antivirus engines will probably flag files that barely do anything.
+
+**Q**: Will there be a native MacOS binary?
+
+**A**: Too complicated to implement.
