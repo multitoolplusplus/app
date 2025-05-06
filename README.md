@@ -2,11 +2,6 @@
 
 ## Cross-platform multitool written in C++
 
-[GitHub Repository](https://github.com/benja2998/multitoolplusplus)  
-[See releases](https://github.com/benja2998/multitoolplusplus/releases)  
-
-[Download directly for Windows](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe) | [Download directly for Linux](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux)
-
 ## Installation
 
 ### Prerequisites
@@ -16,6 +11,8 @@
 ### Using a compiler
 You will first have to download the source code. We recommend using a GitHub release for stability.
 
+[![see releases](https://img.shields.io/badge/See%20releases-8A2BE2)](https://github.com/benja2998/multitoolplusplus/releases)
+
 It's as simple as compiling `main.cpp`. For example, if you are on Windows and using G++:
 
 ```sh
@@ -24,6 +21,9 @@ g++ -o main.exe main.cpp
 
 ### Using the precompiled binaries
 You can easily download and run a precompiled binary from the releases.
+
+[![download for linux](https://img.shields.io/badge/Linux-Download_precompiled_binary-green)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux)
+[![download for windows](https://img.shields.io/badge/Windows-Download_precompiled_binary-blue)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe)
 
 ## IMPORTANT ANNOUNCEMENT
 
