@@ -32,8 +32,8 @@ jobs:
       # Run tests
       - name: Run tests
         run: |
-          ./test  # Adjust this to your test executable
-
+          echo "1" | ./test
+          
       # Generate coverage report using lcov
       - name: Generate lcov report
         run: |
