@@ -87,10 +87,14 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
-        mkdir -p build
-        g++ -static -o build/multitoolplusplus ./*.cpp
+        - if: matrix.build-mode == 'manual'
+      		shell: bash
+      		run: |
+        		mkdir -p build
+        		codeql database create cpp-db --language=cpp --command="g++ -static -o build/multitoolplusplus ./*.cpp"
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
-        category: "/language:${{matrix.language}}"
+				category: "/language:${{matrix.language}}"
+				database: cpp-db
