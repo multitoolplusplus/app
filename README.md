@@ -17,10 +17,13 @@ You will first have to download the source code. We recommend using a GitHub rel
 
 [![see releases](https://img.shields.io/badge/📦_GITHUB_RELEASES-purple)](https://github.com/benja2998/multitoolplusplus/releases)
 
-It's as simple as compiling `main.cpp`. For example, if you are on Windows and using G++:
+It's as simple as compiling all .cpp files. For example, if you are on Windows and using G++:
 
 ```sh
-g++ -o main.exe main.cpp
+cd src # only if your downloaded source code has a src directory
+```
+```sh
+g++ -o main.exe *.cpp
 ```
 
 ### Using the precompiled binaries
