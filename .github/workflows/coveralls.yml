@@ -1,5 +1,8 @@
 name: Coverage Reporting to Coveralls
 
+permissions:
+  contents: read
+
 on:
   push:
     branches:
