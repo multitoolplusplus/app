@@ -1,0 +1,27 @@
+name: ARM Support Check
+
+on:
+  issues:
+    types: [opened, edited, reopened]  # Triggers on issue opened, edited, or reopened
+
+jobs:
+  check-arm-support:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check for ARM support mention
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issueBody = context.payload.issue.body.toLowerCase();
+            const armKeywords = ['arm', 'arm64'];
+            const message = 'If the software does not run on ARM architectures, please follow the compilation instructions in the README.md to compile the software for it.';
+
+            // Check if any arm/arm64 keyword is in the issue body
+            const containsArm = armKeywords.some(keyword => issueBody.includes(keyword));
+
+            if (containsArm) {
+              // Comment on the issue if ARM support is mentioned
+              const comment = context.issue({ body: message });
+              await github.issues.createComment(comment);
+            }
