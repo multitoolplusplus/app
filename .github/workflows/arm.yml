@@ -32,7 +32,9 @@ jobs:
               "arm",
               "arm64",
               "arm32",
-              "aarch64"
+              "aarch64",
+              "android",
+              "termux"
             ];
 
             const message = "If the software does not run on ARM architectures, please follow the compilation instructions in the README.md to compile the software for it.";
