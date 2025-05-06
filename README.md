@@ -32,7 +32,7 @@ You can easily download and run a precompiled binary from the releases.
 
 As of this being wrote, our Windows binary is currently detected by multiple antivirus engines on VirusTotal. If you have the time, please report this as a false positive! The program is **NOT** malware. 
 
-[![anyrun report proving it isn't malware](https://img.shields.io/badge/🔎_ANYRUN_TEXT_REPORT-navy)](https://web.archive.org/web/20250505193713/https://any.run/report/bfeb2d8a414bfedc9124072c483acee0a62a9c4f28174ef483b97fba27165b2f/248a5c03-3969-4b37-833a-00c973f34281) <!-- the reason why we are using internet archive is because anyrun public reports are deleted after 2 weeks -->
+[![anyrun report proving it isn't malware](https://img.shields.io/badge/🔎_ANYRUN_TEXT_REPORT-navy)](https://web.archive.org/web/20250506213922/https://any.run/report/fba2ef4dfa49dd03f385f026ad7d4206d7ea510729c2c21d58a5bb60361633a9/84487d1c-696c-49e0-aeb0-3f03b69a13b6) <!-- the reason why we are using internet archive is because anyrun public reports are deleted after 2 weeks -->
 
 ## FAQ
 
