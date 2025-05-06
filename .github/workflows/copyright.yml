@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '*/3 * * * *'  # Runs every 3 minutes
 
+permissions:
+  contents: write
+
 jobs:
   update-copyright-year:
     runs-on: ubuntu-latest
