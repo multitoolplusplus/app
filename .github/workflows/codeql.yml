@@ -89,7 +89,7 @@ jobs:
       run: |
         mkdir -p build
         g++ -static -o build/multitoolplusplus ./*.cpp
-        exit 1
+        
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
