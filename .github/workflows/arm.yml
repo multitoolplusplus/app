@@ -1,31 +1,49 @@
 name: ARM Support Check
 
+permissions:
+  issues: write  # Permission to comment on and update issues
+
 on:
   issues:
-    types: [opened, edited, reopened]  # Triggers on issue opened, edited, or reopened
+    types:
+      - opened
+      - edited
+      - reopened  # Triggered on opening, editing, or reopening issues
 
 jobs:
-  check-arm-support:
+  check_arm_support:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Check for ARM support mention
+      - name: Check if the issue mentions ARM support
         uses: actions/github-script@v6
         with:
           script: |
-            const issueBody = context.payload.issue.body.toLowerCase();
-            const armKeywords = ['arm', 'arm64'];
-            const message = 'If the software does not run on ARM architectures, please follow the compilation instructions in the README.md to compile the software for it.';
+            const issue = context.payload.issue;
 
-            // Check if any arm/arm64 keyword is in the issue body
-            const containsArm = armKeywords.some(keyword => issueBody.includes(keyword));
+            if (!issue) {
+              core.setFailed("This workflow can only be triggered by issue events.");
+              return;
+            }
+
+            const issueBody = issue.body || "";
+
+            const armKeywords = [
+              "arm",
+              "arm64"
+            ];
+
+            const message = "If the software does not run on ARM architectures, please follow the compilation instructions in the README.md to compile the software for it.";
+
+            // Check if ARM or arm64 is mentioned in the issue body
+            const containsArm = armKeywords.some(keyword => issueBody.toLowerCase().includes(keyword));
 
             if (containsArm) {
-              // Create a comment on the issue if ARM support is mentioned
-              await github.issues.createComment({
+              // Comment on the issue if ARM support is mentioned
+              await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                issue_number: context.payload.issue.number,
+                issue_number: issue.number,
                 body: message,
               });
             }
