@@ -1,4 +1,4 @@
-7# For most projects, this workflow file will not need changing; you simply need
+# For most projects, this workflow file will not need changing; you simply need
 # to commit it to your repository.
 #
 # You may wish to alter this file to override the set of languages analyzed,
@@ -87,14 +87,11 @@ jobs:
     - if: matrix.build-mode == 'manual'
       shell: bash
       run: |
-        - if: matrix.build-mode == 'manual'
-      		shell: bash
-      		run: |
-        		mkdir -p build
-        		codeql database create cpp-db --language=cpp --command="g++ -static -o build/multitoolplusplus ./*.cpp"
+        mkdir -p build
+        codeql database create cpp-db --language=cpp --command="g++ -static -o build/multitoolplusplus ./*.cpp"
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
-      with:
-				category: "/language:${{matrix.language}}"
-				database: cpp-db
+      	with:
+       category: "/language:${{matrix.language}}"
+       database: cpp-db
