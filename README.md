@@ -11,7 +11,7 @@
 ### Using a compiler
 You will first have to download the source code. We recommend using a GitHub release for stability.
 
-[![see releases](https://img.shields.io/badge/See_Releases-purple)](https://github.com/benja2998/multitoolplusplus/releases)
+[![see releases](https://img.shields.io/badge/📦_GITHUB_RELEASES-purple)](https://github.com/benja2998/multitoolplusplus/releases)
 
 It's as simple as compiling `main.cpp`. For example, if you are on Windows and using G++:
 
