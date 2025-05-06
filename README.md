@@ -25,7 +25,7 @@
   <meta name="robots" content="index, follow">
 
   <p><a href="https://github.com/benja2998/multitoolplusplus"></a><a href="https://github.com/benja2998/multitoolplusplus/releases"> See releases </a></p>
-  <p><a href="https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe">Download directly for Windows |</a> <a href="https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux"> Download directly for Linux </a></p>
+  <p><a href="https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe">Download directly for Windows |</a> <a href="https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux">| Download directly for Linux </a></p>
 </head>
 <body>
   <h1>multitool++</h1>
