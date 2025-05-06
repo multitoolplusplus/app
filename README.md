@@ -2,6 +2,8 @@
 
 ## Cross-platform multitool written in C++
 
+[![Build and Upload Binary](https://github.com/benja2998/multitoolplusplus/actions/workflows/build-and-upload.yml/badge.svg)](https://github.com/benja2998/multitoolplusplus/actions/workflows/build-and-upload.yml)
+
 ## Installation
 
 ### Prerequisites
