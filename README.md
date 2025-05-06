@@ -27,10 +27,11 @@ You can easily download and run a precompiled binary from the releases.
 
 ## IMPORTANT ANNOUNCEMENT
 
-![false positive warning](https://github.com/user-attachments/assets/47d9ef92-4ac4-4f0f-a5b5-31a59ee4c978)
+![virustotal scan screenshot](./assets/virustotal_scan.png)
 
-As of this being wrote, our Windows binary is currently detected by multiple antivirus engines on VirusTotal. If you have the time, please report this as a false positive! The program is **NOT** malware.  
-See the AnyRun report [here](https://web.archive.org/web/20250505193713/https://any.run/report/bfeb2d8a414bfedc9124072c483acee0a62a9c4f28174ef483b97fba27165b2f/248a5c03-3969-4b37-833a-00c973f34281).
+As of this being wrote, our Windows binary is currently detected by multiple antivirus engines on VirusTotal. If you have the time, please report this as a false positive! The program is **NOT** malware. 
+
+[![anyrun report proving it isn't malware](https://img.shields.io/badge/AnyRun-Report-navy)](https://web.archive.org/web/20250505193713/https://any.run/report/bfeb2d8a414bfedc9124072c483acee0a62a9c4f28174ef483b97fba27165b2f/248a5c03-3969-4b37-833a-00c973f34281)
 
 ## FAQ
 
