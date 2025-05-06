@@ -16,6 +16,54 @@
     * If you're reading this section, you may want to make a pull request to expand it
 */
 
+namespace ansi {
+    const std::string RESET     = "\033[0m";
+    const std::string BOLD      = "\033[1m";
+    const std::string DIM       = "\033[2m";
+    const std::string ITALIC    = "\033[3m";
+    const std::string UNDERLINE = "\033[4m";
+    const std::string BLINK     = "\033[5m";
+    const std::string REVERSE   = "\033[7m";
+    const std::string HIDDEN    = "\033[8m";
+    const std::string STRIKE    = "\033[9m";
+
+    const std::string BLACK   = "\033[30m";
+    const std::string RED     = "\033[31m";
+    const std::string GREEN   = "\033[32m";
+    const std::string YELLOW  = "\033[33m";
+    const std::string BLUE    = "\033[34m";
+    const std::string MAGENTA = "\033[35m";
+    const std::string CYAN    = "\033[36m";
+    const std::string WHITE   = "\033[37m";
+
+    const std::string BRIGHT_BLACK   = "\033[90m";
+    const std::string BRIGHT_RED     = "\033[91m";
+    const std::string BRIGHT_GREEN   = "\033[92m";
+    const std::string BRIGHT_YELLOW  = "\033[93m";
+    const std::string BRIGHT_BLUE    = "\033[94m";
+    const std::string BRIGHT_MAGENTA = "\033[95m";
+    const std::string BRIGHT_CYAN    = "\033[96m";
+    const std::string BRIGHT_WHITE   = "\033[97m";
+
+    const std::string BG_BLACK   = "\033[40m";
+    const std::string BG_RED     = "\033[41m";
+    const std::string BG_GREEN   = "\033[42m";
+    const std::string BG_YELLOW  = "\033[43m";
+    const std::string BG_BLUE    = "\033[44m";
+    const std::string BG_MAGENTA = "\033[45m";
+    const std::string BG_CYAN    = "\033[46m";
+    const std::string BG_WHITE   = "\033[47m";
+
+    const std::string BG_BRIGHT_BLACK   = "\033[100m";
+    const std::string BG_BRIGHT_RED     = "\033[101m";
+    const std::string BG_BRIGHT_GREEN   = "\033[102m";
+    const std::string BG_BRIGHT_YELLOW  = "\033[103m";
+    const std::string BG_BRIGHT_BLUE    = "\033[104m";
+    const std::string BG_BRIGHT_MAGENTA = "\033[105m";
+    const std::string BG_BRIGHT_CYAN    = "\033[106m";
+    const std::string BG_BRIGHT_WHITE   = "\033[107m";
+}
+
 namespace console {
     void clear() {
 #ifdef _WIN32
@@ -45,17 +93,16 @@ namespace discord {
         int result = system(command.c_str());
         
         if (result != 0) {
-            std::cerr << "\033[31mFailed to send message (curl error)\033[0m" << std::endl;
+            std::cerr << ansi::RED << "Failed to send message (curl error)" << ansi::RESET << std::endl;
         } else {
-            std::cout << "\033[32mMessage sent successfully!\033[0m" << std::endl;
+            std::cout << ansi::GREEN << "Message sent successfully!" << ansi::RESET << std::endl;
         }
     }
 }
 
 void initialize();
 
-void banner()
-{
+void banner() {
     const char* banner = R"(
                   .__   __  .__  __                .__                           
   _____  __ __|  |_/  |_|__|/  |_  ____   ____ |  |      .__         .__     
@@ -63,80 +110,71 @@ void banner()
 |  Y Y  \  |  /  |_|  | |  ||  | (  <_> |  <_> )  |__ /__    __/  /__    __/ 
 |__|_|  /____/|____/__| |__||__|  \____/ \____/|____/    |__|        |__|    
       \/                                                                     
-
 )";
-    std::cout << "\033[33m" << banner << "\033[0m\n";
+    std::cout << ansi::CYAN << banner << ansi::RESET << "\n";
 }
 
-void menu()
-{
-    std::cout << "\033[36m-- OPTIONS: --\033[0m\n";
-    std::cout << "\033[32m1. exit\033[0m\n";
-    std::cout << "\033[32m2. timer\033[0m\n";
-    std::cout << "\033[32m3. send Discord message\033[0m\n";
-    std::cout << "\033[36m--          --\033[0m\n";
+void menu() {
+    std::cout << ansi::BG_BLUE << ansi::CYAN;
+    std::cout << "--     OPTIONS:      --\n";
+    std::cout << "1. exit                \n";
+    std::cout << "2. timer               \n";
+    std::cout << "3. send Discord message\n";
+    std::cout << "--                   --\n";
+    std::cout << ansi::RESET;
 }
 
-void read()
-{
+void read() {
     std::string input;
-    std::cout << "\033[35mEnter an option: \033[0m";
+    std::cout << ansi::CYAN << "Enter an option: " << ansi::RESET;
     std::getline(std::cin, input);
-    std::cout << "\033[33mYou chose: \033[0m" << input << "\n";
-    std::cout << "Validating choice... ";
-    if (input == "1")
-    {
-        std::cout << "\033[32mValid choice!\033[0m\n";
+    std::cout << ansi::CYAN << "Validating choice... " << ansi::RESET;
+    if (input == "1") {
+        std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
         exit(0);
     }
-    else if (input == "2") 
-    {
-        std::cout << "\033[32mValid choice!\033[0m\n";
-        std::cout << "\033[35mEnter a number of seconds: \033[0m";
+    else if (input == "2") {
+        std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+        std::cout << ansi::CYAN << "Enter a number of seconds: " << ansi::RESET;
         std::string seconds;
         std::getline(std::cin, seconds);
         int seconds_int = std::stoi(seconds);
         int timer = seconds_int;
-        while (timer > 0)
-        {
-            std::cout << "\033[33m" << timer << "\033[0m\n";
+        while (timer > 0) {
+            std::cout << ansi::WHITE << timer << ansi::RESET << "\n";
             std::this_thread::sleep_for(std::chrono::seconds(1));
             timer--;
         }
         initialize();
     }
-    else if (input == "3")
-    {
-        std::cout << "\033[32mValid choice!\033[0m\n";
-        std::cout << "\033[35mEnter Discord webhook URL: \033[0m";
+    else if (input == "3") {
+        std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+        std::cout << ansi::CYAN << "Enter Discord webhook URL: " << ansi::RESET;
         std::string webhook_url;
         std::getline(std::cin, webhook_url);
         
-        std::cout << "\033[35mEnter message to send: \033[0m";
+        std::cout << ansi::CYAN << "Enter message to send: " << ansi::RESET;
         std::string message;
         std::getline(std::cin, message);
         
         discord::send_webhook(webhook_url, message);
         initialize();
     }
-    else 
-    {
-        std::cout << "\033[31mInvalid choice.\033[0m\n";
+    else {
+        std::cout << ansi::RED << "Invalid choice." << ansi::RESET << "\n";
         exit(1);
     }
 }
 
-void initialize()
-{
+void initialize() {
     console::clear();
-    std::cout << "\033[34mHello from Multitool++!\033[0m\n";
-    std::cout << "\033[34mC++ is a great language!\033[0m\n";
+    std::cout << ansi::WHITE << "Hello from Multitool++!" << ansi::RESET << "\n";
+    std::cout << ansi::WHITE << "C++ is a great language!" << ansi::RESET << "\n";
     banner();
     menu();
     read();
 }
 
-int main()
-{
+int main() {
     initialize();
 }
