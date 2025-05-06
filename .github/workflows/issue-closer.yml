@@ -45,7 +45,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issue.number,
-                body: "This issue does not follow the required template and has been automatically closed. Please ensure your issue follows the template and reopen it."
+                body: "This issue does not follow a template and has therefore been closed."
               });
             } else {
               // If the issue is compliant, leave a message with contribution instructions
