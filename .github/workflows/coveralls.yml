@@ -26,7 +26,6 @@ jobs:
       # Compile C++ code with coverage flags
       - name: Compile C++ with g++ and coverage flags
         run: |
-          # Replace this with your actual C++ files
           g++ -fprofile-arcs -ftest-coverage -static -o test ./src/*.cpp
 
       # Run tests
