@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <!-- Title and description for search engine results -->
+    
   <meta name="description" content="multitool++: A cross-platform multitool written in C++ for Windows and Linux. Download precompiled binaries or build from source.">
   <meta name="keywords" content="multitool++, C++, Windows, Linux, precompiled binaries, build from source, antivirus, false positive">
 
