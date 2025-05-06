@@ -15,7 +15,7 @@ jobs:
       matrix:
         language: [ "actions", "c-cpp" ]
         build-mode: [ "none", "manual" ]
-    runs-on: ${{ matrix.language == 'c-cpp' && matrix.build-mode == 'manual' && 'ubuntu-latest' || 'ubuntu-latest' }}
+    runs-on: ubuntu-latest  # using ubuntu-latest for simplicity, adjust if you need macOS
 
     permissions:
       security-events: write
@@ -32,6 +32,12 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
+
+      # Add this step to ensure that CodeQL CLI is in the PATH
+      - name: Set up CodeQL environment
+        run: |
+          echo "Setting up CodeQL CLI"
+          export PATH=$PATH:${{ github.action_path }}/codeql
 
       - name: Build C++ manually
         if: matrix.build-mode == 'manual' && matrix.language == 'c-cpp'
