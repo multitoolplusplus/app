@@ -30,7 +30,9 @@ jobs:
 
             const armKeywords = [
               "arm",
-              "arm64"
+              "arm64",
+              "arm32",
+              "aarch64"
             ];
 
             const message = "If the software does not run on ARM architectures, please follow the compilation instructions in the README.md to compile the software for it.";
