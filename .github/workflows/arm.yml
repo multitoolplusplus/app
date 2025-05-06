@@ -21,7 +21,11 @@ jobs:
             const containsArm = armKeywords.some(keyword => issueBody.includes(keyword));
 
             if (containsArm) {
-              // Comment on the issue if ARM support is mentioned
-              const comment = context.issue({ body: message });
-              await github.issues.createComment(comment);
+              // Create a comment on the issue if ARM support is mentioned
+              await github.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                body: message,
+              });
             }
