@@ -65,6 +65,6 @@
   <p><strong>A</strong>: Too complicated to implement.</p>
 
   <hr/>
-  <p>&copy; 2025 multitool++ contributors. Licensed under the <a href="./LICENSE">GNU GPL v3.0.</a></p>
+  <p>&copy; 2024 multitool++ contributors. Licensed under the <a href="./LICENSE">GNU GPL v3.0.</a></p>
 </body>
 </html>
