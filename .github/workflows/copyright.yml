@@ -21,7 +21,7 @@ jobs:
           current_year=$(date +'%Y')
 
           # Update the copyright year in README.md (assumes the pattern is "20**")
-          sed -i "s/20[0-9][0-9]$/20$current_year/" README.md
+          sed -i "s/20[0-9][0-9]/$current_year/" README.md
 
           # Check if changes were made
           git diff
