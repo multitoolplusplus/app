@@ -88,10 +88,9 @@ jobs:
       shell: bash
       run: |
         mkdir -p build
-        codeql database create cpp-db --language=cpp --command="g++ -static -o build/multitoolplusplus ./*.cpp"
+        g++ -static -o build/multitoolplusplus ./*.cpp
         
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
-        database: cpp-db
