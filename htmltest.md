@@ -22,52 +22,9 @@
   <!-- Search Engine meta for better indexing -->
   <meta name="robots" content="index, follow">
 
-  <p><a href="https://github.com/benja2998/multitoolplusplus">View on GitHub |</a><a href="https://github.com/benja2998/multitoolplusplus/releases"> See releases </a></p>
+  <p><a href="https://github.com/benja2998/multitoolplusplus"></a><a href="https://github.com/benja2998/multitoolplusplus/releases"> See releases </a></p>
   <p><a href="https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe">Download directly for Windows |</a> <a href="https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux"> Download directly for Linux </a></p>
   <title>multitool++</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      background-color: #1e1e1e;
-      color: #e0e0e0;
-      margin: 2rem;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      color: #ffcc00;
-    }
-    a {
-      color: #80dfff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    code {
-      background-color: #2a2a2a;
-      padding: 0.2em 0.4em;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-    pre {
-      background-color: #2a2a2a;
-      padding: 1em;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    img {
-      max-width: 100%;
-      border: 1px solid #555;
-      border-radius: 8px;
-      margin: 1em 0;
-    }
-    hr {
-      border: 0;
-      height: 1px;
-      background-color: #444;
-      margin: 2rem 0;
-    }
-  </style>
 </head>
 <body>
   <h1>multitool++</h1>
