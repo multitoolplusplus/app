@@ -1,4 +1,4 @@
-# For most projects, this workflow file will not need changing; you simply need
+7# For most projects, this workflow file will not need changing; you simply need
 # to commit it to your repository.
 #
 # You may wish to alter this file to override the set of languages analyzed,
@@ -89,7 +89,6 @@ jobs:
       run: |
         mkdir -p build
         g++ -static -o build/multitoolplusplus ./*.cpp
-        
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
