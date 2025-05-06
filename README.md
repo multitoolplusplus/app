@@ -1,72 +1,44 @@
-<!-- README.md -->
-<!-- yes you can write html in markdown -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+# multitool++
 
+## Cross-platform multitool written in C++
 
-  <meta name="description" content="multitool++: A cross-platform multitool written in C++ for Windows and Linux. Download precompiled binaries or build from source.">
-  <meta name="keywords" content="multitool++, C++, Windows, Linux, precompiled binaries, build from source, antivirus, false positive">
+[GitHub Repository](https://github.com/benja2998/multitoolplusplus)  
+[See releases](https://github.com/benja2998/multitoolplusplus/releases)  
 
-  <!-- Open Graph for social media previews -->
-  <meta property="og:title" content="multitool++" />
-  <meta property="og:description" content="Cross-platform multitool written in C++ for Windows and Linux." />
-  <meta property="og:url" content="https://benja2998.github.io/multitoolplusplus/" />
-  <meta property="og:type" content="website" />
+[Download directly for Windows](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe) | [Download directly for Linux](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux)
 
-  <!-- Twitter Card meta for better visibility on Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="multitool++">
-  <meta name="twitter:description" content="Cross-platform multitool written in C++ for Windows and Linux." />
+## Installation
 
-  <!-- Search Engine meta for better indexing -->
-  <meta name="robots" content="index, follow">
+### Prerequisites
+- C++ Compiler (if you won't use a precompiled binary)
+- Linux or Windows system (you may be able to run the software on macOS via WINE)
 
-  <p><a href="https://github.com/benja2998/multitoolplusplus"></a><a href="https://github.com/benja2998/multitoolplusplus/releases"> See releases </a></p>
-  <p><a href="https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe">Download directly for Windows |</a> <a href="https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux">| Download directly for Linux </a></p>
-</head>
-<body>
-  <h1>multitool++</h1>
-  <h2>Cross-platform multitool written in C++</h2>
+### Using a compiler
+You will first have to download the source code. We recommend using a GitHub release for stability.
 
-  <h2>Installation</h2>
+It's as simple as compiling `main.cpp`. For example, if you are on Windows and using G++:
 
-  <h3>Prerequisites</h3>
-  <ul>
-    <li>C++ Compiler (if you won't use a precompiled binary)</li>
-    <li>Linux or Windows system (you may be able to run the software on macOS via WINE)</li>
-  </ul>
+```sh
+g++ -o main.exe main.cpp
+```
 
-  <h3>Using a compiler</h3>
-  <p>
-    You will first have to download the source code. We recommend using a GitHub release for stability.
-  </p>
-  <p>It's as simple as compiling <code>main.cpp</code>. For example, if you are on Windows and using G++:</p>
-  <pre><code>g++ -o main.exe main.cpp</code></pre>
+### Using the precompiled binaries
+You can easily download and run a precompiled binary from the releases.
 
-  <h3>Using the precompiled binaries</h3>
-  <p>
-    You can easily download and run a precompiled binary from the releases.
-  </p>
+## IMPORTANT ANNOUNCEMENT
 
-  <h2>IMPORTANT ANNOUNCEMENT</h2>
-  <img src="https://github.com/user-attachments/assets/47d9ef92-4ac4-4f0f-a5b5-31a59ee4c978" alt="false positive warning" />
-  <p>
-    As of this being wrote, our Windows binary is currently detected by multiple antivirus engines on VirusTotal. If you have the time, please report this as a false positive! The program is <strong>NOT</strong> malware. 
-    See the AnyRun report 
-    <a href="https://web.archive.org/web/20250505193713/https://any.run/report/bfeb2d8a414bfedc9124072c483acee0a62a9c4f28174ef483b97fba27165b2f/248a5c03-3969-4b37-833a-00c973f34281" target="_blank">here</a>.
-  </p>
+![false positive warning](https://github.com/user-attachments/assets/47d9ef92-4ac4-4f0f-a5b5-31a59ee4c978)
 
-  <h2>FAQ</h2>
-  <p><strong>Q</strong>: It's detected as malware by Antivirus!</p>
-  <p><strong>A</strong>: Antivirus engines will probably flag files that barely do anything.</p>
+As of this being wrote, our Windows binary is currently detected by multiple antivirus engines on VirusTotal. If you have the time, please report this as a false positive! The program is **NOT** malware.  
+See the AnyRun report [here](https://web.archive.org/web/20250505193713/https://any.run/report/bfeb2d8a414bfedc9124072c483acee0a62a9c4f28174ef483b97fba27165b2f/248a5c03-3969-4b37-833a-00c973f34281).
 
-  <p><strong>Q</strong>: Will there be a native macOS binary?</p>
-  <p><strong>A</strong>: Too complicated to implement.</p>
+## FAQ
 
-  <hr/>
-  <p>&copy; 2025 multitool++ contributors. Licensed under the <a href="./LICENSE">GNU GPL v3.0.</a></p>
-</body>
-</html>
+**Q**: It's detected as malware by Antivirus!  
+**A**: Antivirus engines will probably flag files that barely do anything.
+
+**Q**: Will there be a native macOS binary?  
+**A**: Too complicated to implement.
+
+---
+© 2025 multitool++ contributors. Licensed under the [GNU GPL v3.0](./LICENSE).
