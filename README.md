@@ -7,6 +7,7 @@
 ### Prerequisites
 - C++ Compiler (if you won't use a precompiled binary)
 - Linux or Windows system (you may be able to run the software on macOS via WINE)
+- Curl installed (check output of curl command in your terminal, most Operating Systems including Windows versions above 10 will have it preinstalled. If you don't have curl, you can try finding a way to install it.)
 
 ### Using a compiler
 You will first have to download the source code. We recommend using a GitHub release for stability.
