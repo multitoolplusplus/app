@@ -84,9 +84,9 @@ jobs:
         # Store the generated SARIF file to a known path
         output: ${{ github.workspace }}/codeql-results.sarif
 
-    # Upload the SARIF file to the GitHub repository
+    # Upload the SARIF file
     - name: Upload SARIF file
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2  # Use v2 here to avoid the download info issue
       with:
         name: codeql-sarif
         path: ${{ github.workspace }}/codeql-results.sarif
