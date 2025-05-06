@@ -10,22 +10,18 @@ on:
 
 jobs:
   analyze:
-    name: Analyze (${{ matrix.language }})
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ "actions", "c-cpp" ]
+        build-mode: [ "none", "manual" ]
+    runs-on: ${{ matrix.language == 'c-cpp' && matrix.build-mode == 'manual' && 'ubuntu-latest' || 'ubuntu-latest' }}
+
     permissions:
       security-events: write
       packages: read
       actions: read
       contents: read
-
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - language: actions
-            build-mode: none
-          - language: c-cpp
-            build-mode: manual
 
     steps:
       - name: Checkout repository
@@ -38,22 +34,21 @@ jobs:
           build-mode: ${{ matrix.build-mode }}
 
       - name: Build C++ manually
-        if: matrix.build-mode == 'manual'
+        if: matrix.build-mode == 'manual' && matrix.language == 'c-cpp'
         shell: bash
         run: |
           mkdir -p build
           codeql database create cpp-db --language=cpp --command="g++ -static -o build/multitoolplusplus ./*.cpp"
 
       - name: Analyze CodeQL (manual)
-        if: matrix.build-mode == 'manual'
+        if: matrix.build-mode == 'manual' && matrix.language == 'c-cpp'
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{ matrix.language }}"
           database: cpp-db
 
       - name: Analyze CodeQL (auto)
-        if: matrix.build-mode != 'manual'
+        if: matrix.build-mode != 'manual' && matrix.language != 'c-cpp'
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{ matrix.language }}"
-        
