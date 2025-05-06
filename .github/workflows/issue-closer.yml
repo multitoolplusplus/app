@@ -1,5 +1,8 @@
 name: Close Non-compliant issues
 
+permissions:
+  issues: write
+
 on:
   issues:
     types:
