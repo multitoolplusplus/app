@@ -34,7 +34,8 @@ jobs:
               "arm32",
               "aarch64",
               "android",
-              "termux"
+              "termux",
+              "copilot+" // This is because Microsoft is making Copilot+ PCs and many of them run ARM
             ];
 
             const message = "If the software does not run on ARM architectures, please follow the compilation instructions in the README.md to compile the software for it.";
