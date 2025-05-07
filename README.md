@@ -32,19 +32,11 @@ You can easily download and run a precompiled binary from the releases.
 [![download for linux](https://img.shields.io/badge/🐧_LINUX_EXECUTABLE-green)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux)
 [![download for windows](https://img.shields.io/badge/🪟_WINDOWS_EXECUTABLE-blue)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe)
 
-## IMPORTANT ANNOUNCEMENT
-
-![virustotal scan screenshot](./assets/virustotal_scan.png)
-
-As of this being wrote, our Windows binary is currently detected by multiple antivirus engines on VirusTotal. If you have the time, please report this as a false positive! The program is **NOT** malware. 
-
-[![anyrun report proving it isn't malware](https://img.shields.io/badge/🔎_ANYRUN_TEXT_REPORT-navy)](https://web.archive.org/web/20250506213922/https://any.run/report/fba2ef4dfa49dd03f385f026ad7d4206d7ea510729c2c21d58a5bb60361633a9/84487d1c-696c-49e0-aeb0-3f03b69a13b6) <!-- the reason why we are using internet archive is because anyrun public reports are deleted after 2 weeks -->
-
 ## FAQ
 
 **Q**: It's detected as malware by Antivirus!  
 
-**A**: Antivirus engines will probably flag files that barely do anything.
+**A**: Antivirus engines will probably flag new and/or unsigned files.
 
 **Q**: Will there be a native macOS binary?  
 
