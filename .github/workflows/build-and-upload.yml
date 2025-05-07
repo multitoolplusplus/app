@@ -37,7 +37,7 @@ jobs:
 
       # Step 6: Upload the compiled Linux binary
       - name: Upload Linux binary to release
-        uses: actions/upload-release-asset@v1
+        uses: benja2998/upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./main
@@ -48,7 +48,7 @@ jobs:
 
       # Step 7: Upload the compiled Windows binary
       - name: Upload Windows binary to release
-        uses: actions/upload-release-asset@v1
+        uses: benja2998/upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./main.exe
