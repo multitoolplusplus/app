@@ -39,6 +39,13 @@ You can easily download and run a precompiled binary from the releases.
 [![download for linux](https://img.shields.io/badge/🐧_LINUX_EXECUTABLE-green)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux)
 [![download for windows](https://img.shields.io/badge/🪟_WINDOWS_EXECUTABLE-blue)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe)
 
+## Features
+- [x] Exit
+- [x] Timer
+- [x] Send message to Discord webhook
+- [ ] Send message to Telegram bot
+- [ ] Send message to Slack bot
+
 ## Safety
 You can know that the software is safe as the precompiled binaries are built with this [GitHub Action](./.github/workflows/build-and-upload.yml) and not tampered with.
 
