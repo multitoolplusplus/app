@@ -29,17 +29,17 @@ jobs:
 
       # Step 4: Compile the Linux binary
       - name: Build Linux binary
-        run: g++ -static -o ./main ./src/*.cpp
+        run: g++ -static -o ./multitoolpp-linux ./src/*.cpp
 
       # Step 5: Compile the Windows binary
       - name: Build Windows binary
-        run: x86_64-w64-mingw32-g++ -static -static-libgcc -static-libstdc++ -o ./main.exe ./src/*.cpp
+        run: x86_64-w64-mingw32-g++ -static -static-libgcc -static-libstdc++ -o ./multitoolpp-windows.exe ./src/*.cpp
 
       # Step 6: Upload the compiled Linux binary using action-gh-release
       - name: Upload Linux binary to release
         uses: softprops/action-gh-release@v2
         with:
-          files: ./main
+          files: ./multitoolpp-linux
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -47,7 +47,7 @@ jobs:
       - name: Upload Windows binary to release
         uses: softprops/action-gh-release@v2
         with:
-          files: ./main.exe
+          files: ./multitoolpp-windows.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -58,7 +58,7 @@ jobs:
           response=$(curl --silent --request POST \
             --url https://www.virustotal.com/api/v3/files \
             --header "x-apikey: ${{ secrets.VT_API_KEY }}" \
-            --form file=@main)
+            --form file=@multitoolpp-linux)
 
           echo "$response" > vt_linux_response.json
           ANALYSIS_ID=$(echo "$response" | jq -r '.data.id')
@@ -72,7 +72,7 @@ jobs:
           response=$(curl --silent --request POST \
             --url https://www.virustotal.com/api/v3/files \
             --header "x-apikey: ${{ secrets.VT_API_KEY }}" \
-            --form file=@main.exe)
+            --form file=@multitoolpp-windows.exe)
 
           echo "$response" > vt_windows_response.json
           ANALYSIS_ID=$(echo "$response" | jq -r '.data.id')
