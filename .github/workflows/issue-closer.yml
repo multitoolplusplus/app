@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Check if the issue follows the template
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const issue = context.payload.issue;
