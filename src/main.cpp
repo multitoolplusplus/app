@@ -32,11 +32,11 @@ void banner() {
 |__|_|  /____/|____/__| |__||__|  \____/ \____/|____/    |__|        |__|    
       \/                                                                     
 )";
-    std::cout << ansi::CYAN << banner << ansi::RESET << "\n";
+    std::cout << ansi::BOLD << ansi::CYAN << banner << ansi::RESET << "\n";
 }
 
 void menu() {
-    std::cout << ansi::BG_BLUE << ansi::CYAN;
+    std::cout << ansi::ITALIC << ansi::UNDERLINE << ansi::BG_BLUE << ansi::CYAN;
     std::cout << "--     OPTIONS:       --\n";
     std::cout << "1. exit                 \n";
     std::cout << "2. timer                \n";
