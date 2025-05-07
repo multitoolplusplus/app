@@ -36,8 +36,8 @@ g++ -o main.exe *.cpp
 ### Using the precompiled binaries
 You can easily download and run a precompiled binary from the releases.
 
-[![download for linux](https://img.shields.io/badge/🐧_LINUX_EXECUTABLE-green)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux)
-[![download for windows](https://img.shields.io/badge/🪟_WINDOWS_EXECUTABLE-blue)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe)
+[![download for linux](https://img.shields.io/badge/🐧_LINUX_EXECUTABLE-green)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/multitoolpp-linux)
+[![download for windows](https://img.shields.io/badge/🪟_WINDOWS_EXECUTABLE-blue)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/multitoolpp-windows.exe)
 
 ## Features
 - [x] Exit
