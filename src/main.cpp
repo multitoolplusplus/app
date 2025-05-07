@@ -13,6 +13,7 @@
     * system(...) - RUN A SYSTEM COMMAND
     * console::clear() - CLEAR THE CONSOLE
     * discord::send_webhook(...) - SEND MESSAGE TO DISCORD WEBHOOK
+    * telegram::send_message(...) - SEND MESSAGE TO TELEGRAM BOT
     * If you're reading this section, you may want to make a pull request to expand it
 */
 
@@ -100,6 +101,22 @@ namespace discord {
     }
 }
 
+namespace telegram {
+    void send_message(const std::string& token_id, const std::string& chat_id, const std::string& message) {
+        std::string url = "https://api.telegram.org/bot" + token_id + "/sendMessage";
+        std::string command = "curl -s -o /dev/null -X POST -H \"Content-Type: application/json\" -d \"{\\\"chat_id\\\": \\\"" + 
+          chat_id + "\\\", \\\"text\\\": \\\"" + message + "\\\"}\" " + url;
+
+        int result = system(command.c_str());
+
+        if (result != 0) {
+          std::cerr << ansi::RED << "Failed to send message (curl error)" << ansi::RESET << std::endl;
+        } else {
+          std::cout << ansi::GREEN << "Message sent successfully!" << ansi::RESET << std::endl;
+        }
+    }
+}
+
 void initialize();
 
 void banner() {
@@ -116,11 +133,12 @@ void banner() {
 
 void menu() {
     std::cout << ansi::BG_BLUE << ansi::CYAN;
-    std::cout << "--     OPTIONS:      --\n";
-    std::cout << "1. exit                \n";
-    std::cout << "2. timer               \n";
-    std::cout << "3. send Discord message\n";
-    std::cout << "--                   --\n";
+    std::cout << "--     OPTIONS:       --\n";
+    std::cout << "1. exit                 \n";
+    std::cout << "2. timer                \n";
+    std::cout << "3. send Discord message \n";
+    std::cout << "4. send Telegram message\n"; 
+    std::cout << "--                    --\n";
     std::cout << ansi::RESET;
 }
 
@@ -158,6 +176,23 @@ void read() {
         std::getline(std::cin, message);
         
         discord::send_webhook(webhook_url, message);
+        initialize();
+    }
+    else if (input == "4") {
+        std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+        std::cout << ansi::CYAN << "Enter Telegram Bot Token ID: " << ansi::RESET;
+        std::string token_id;
+        std::getline(std::cin, token_id);
+
+        std::cout << ansi::CYAN << "Enter Telegram Chat ID: " << ansi::RESET;
+        std::string chat_id;
+        std::getline(std::cin, chat_id);
+
+        std::cout << ansi::CYAN << "Enter message to send: " << ansi::RESET;
+        std::string message;
+        std::getline(std::cin, message);
+
+        telegram::send_message(token_id, chat_id, message);
         initialize();
     }
     else {

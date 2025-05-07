@@ -43,7 +43,7 @@ You can easily download and run a precompiled binary from the releases.
 - [x] Exit
 - [x] Timer
 - [x] Send message to Discord webhook
-- [ ] Send message to Telegram bot
+- [x] Send message to Telegram bot
 - [ ] Send message to Slack bot
 
 ## Safety
