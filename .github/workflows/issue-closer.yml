@@ -8,6 +8,7 @@ on:
     types:
       - opened
       - reopened
+      - edited
 
 jobs:
   close_non_compliant_issues:
