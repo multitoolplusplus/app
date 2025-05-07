@@ -49,9 +49,10 @@ You can easily download and run a precompiled binary from the releases.
 ## Safety
 You can know that the software is safe as the precompiled binaries are built with this [GitHub Action](./.github/workflows/build-and-upload.yml) and not tampered with.
 
-Additionally, you can see the AnyRun text report:
+Additionally, you can see the analyses:
 
-[![anyrun report proving it isn't malware](https://img.shields.io/badge/🔎_ANYRUN_TEXT_REPORT-navy)](https://web.archive.org/web/20250507002358/https://any.run/report/e23035c942553c9861c1467f33ab87803a18c871991808b93a64a2b4ef51f685/0c54f169-24ed-42ec-b40b-f0f15bf6eeb6) <!-- the reason why we are using internet archive is because anyrun public reports are deleted after 2 weeks -->
+[![analyis proving it isn't malware](https://img.shields.io/badge/🔎_THREAT_INSIGHTS_PORTAL_ANALYSIS_(LINUX)-navy)](https://tip.neiki.dev/file/ed26c09a08964564c00627c4c73d3a4c0c0e905c5ac5e99dc2e71b03a775a6be)
+[![analysis proving it isn't malware](https://img.shields.io/badge/🔎_THREAT_INSIGHTS_PORTAL_ANALYSIS_(WINDOWS)-navy)](https://tip.neiki.dev/file/ab49db1e1c5ba6a79b3b5534924a037b84b0ee8f2c721b2f48d57fe1197f2446)
 
 ## FAQ
 **Q**: It's detected as malware by Antivirus!  
