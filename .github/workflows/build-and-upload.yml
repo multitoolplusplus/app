@@ -95,11 +95,11 @@ jobs:
 
             const updatedBody = `${release.body || ''}
 
-Unsure about the legitimacy of the files? See the [workflow](https://github.com/benja2998/multitoolplusplus/blob/main/.github/workflows/build-and-upload.yml) to see they weren't tampered with!
+            Unsure about the legitimacy of the files? See the [workflow](https://github.com/benja2998/multitoolplusplus/blob/main/.github/workflows/build-and-upload.yml) to see they weren't tampered with!
 
-🛡 **VirusTotal Scan Results**
-- [Linux binary scan](${linuxLink})
-- [Windows binary scan](${windowsLink})`;
+            🛡 **VirusTotal Scan Results**
+            - [Linux binary scan](${linuxLink})
+            - [Windows binary scan](${windowsLink})`;
 
             await github.rest.repos.updateRelease({
               owner: context.repo.owner,
