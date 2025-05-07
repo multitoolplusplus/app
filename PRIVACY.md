@@ -7,4 +7,4 @@ At multitool++, we respect your privacy.
 
 ## Contact
 
-For any questions or concerns, you may contact [benja2998@duck.com](https://example.com).
+For any questions or concerns, you may contact [benja2998@duck.com](mailto:benja2998@duck.com).
