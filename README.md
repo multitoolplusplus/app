@@ -7,6 +7,11 @@
 
 ## Installation
 
+### System requirements
+- If you're using Windows, it must not be older than Windows 10. This is because older Windows systems don't preinstall curl. You may be able to get the software working if you install curl manually on an older Windows system.
+- Any x86_64 CPU, the software is pretty lightweight.
+- If your CPU is not x86_64, you may want to compile the software yourself for your architecture.
+
 ### Prerequisites
 - C++ Compiler (if you won't use a precompiled binary)
 - Linux or Windows system (you may be able to run the software on macOS via WINE)
