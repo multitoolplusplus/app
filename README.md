@@ -32,8 +32,14 @@ You can easily download and run a precompiled binary from the releases.
 [![download for linux](https://img.shields.io/badge/🐧_LINUX_EXECUTABLE-green)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-linux)
 [![download for windows](https://img.shields.io/badge/🪟_WINDOWS_EXECUTABLE-blue)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/main-windows.exe)
 
-## FAQ
+## Safety
+You can know that the software is safe as the precompiled binaries are built with this [GitHub Action](./.github/workflows/build-and-upload.yml) and not tampered with.
 
+Additionally, you can see the AnyRun text report:
+
+[![anyrun report proving it isn't malware](https://img.shields.io/badge/🔎_ANYRUN_TEXT_REPORT-navy)](https://web.archive.org/web/20250507002358/https://any.run/report/e23035c942553c9861c1467f33ab87803a18c871991808b93a64a2b4ef51f685/0c54f169-24ed-42ec-b40b-f0f15bf6eeb6) <!-- the reason why we are using internet archive is because anyrun public reports are deleted after 2 weeks -->
+
+## FAQ
 **Q**: It's detected as malware by Antivirus!  
 
 **A**: Antivirus engines will probably flag new and/or unsigned files.
