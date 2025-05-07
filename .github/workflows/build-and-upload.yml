@@ -37,7 +37,7 @@ jobs:
 
       # Step 6: Upload the compiled Linux binary using action-gh-release
       - name: Upload Linux binary to release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: ./main
         env:
@@ -45,7 +45,7 @@ jobs:
 
       # Step 7: Upload the compiled Windows binary using action-gh-release
       - name: Upload Windows binary to release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: ./main.exe
         env:
