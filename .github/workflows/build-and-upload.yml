@@ -87,7 +87,7 @@ jobs:
 
       # Step 10: Append VirusTotal links to the release body
       - name: Append VirusTotal links to the release body
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             // Get the release details
