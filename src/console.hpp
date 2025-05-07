@@ -1,4 +1,3 @@
-#include <iostream>
 #include <cstdlib>
 
 #ifndef CONSOLE_HPP
@@ -10,6 +9,7 @@ namespace console {
 #elif defined(__linux__) || defined(__APPLE__) || defined(__unix__)
         system("clear");
 #else
+        #include <iostream>
         std::cout << "Unsupported OS. Please make sure you have modified the source code before compiling for another OS.";
         exit(10);
 #endif
