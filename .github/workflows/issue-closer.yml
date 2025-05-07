@@ -19,35 +19,60 @@ jobs:
         with:
           script: |
             const issue = context.payload.issue;
-
             if (!issue) {
               core.setFailed("This workflow can only be triggered by issue events.");
               return;
             }
 
-            const issueBody = issue.body || "";
+            const body = issue.body || "";
 
-            const templateKeywords = [
-              "**Describe the bug**",
-              "**Is your feature request related to a problem? Please describe.**",
-              "**Describe the vulnerability**"
-            ];
+            // Top-level template detection
+            const isBugTemplate = body.includes("**Describe the bug**");
+            const isFeatureTemplate = body.includes("**Is your feature request related to a problem? Please describe.**");
+            const isVulnerabilityTemplate = body.includes("**Describe the vulnerability**");
 
-            const isCompliant = templateKeywords.some(keyword => issueBody.includes(keyword));
+            let isCompliant = false;
+
+            if (isBugTemplate) {
+              const bugKeywords = [
+                "**To Reproduce**",
+                "**Expected behavior**",
+                "**Screenshots**",
+                "**Desktop (please complete the following information):**",
+                "**Smartphone (please complete the following information):**",
+                "**Additional context**"
+              ];
+              isCompliant = bugKeywords.every(k => body.includes(k));
+            } else if (isFeatureTemplate) {
+              const featureKeywords = [
+                "**Describe the solution you'd like**",
+                "**Describe alternatives you've considered**",
+                "**Additional context**"
+              ];
+              isCompliant = featureKeywords.every(k => body.includes(k));
+            } else if (isVulnerabilityTemplate) {
+              const vulnKeywords = [
+                "**Vulnerable Code**",
+                "**Suggested Fix**",
+                "**Additional context**"
+              ];
+              isCompliant = vulnKeywords.every(k => body.includes(k));
+            }
 
             if (!isCompliant) {
-              // Close the issue if it's not compliant
+              // Close the issue
               await github.rest.issues.update({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issue.number,
-                state: "closed",
+                state: "closed"
               });
 
+              // And leave a comment
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issue.number,
-                body: "This issue does not follow a template and has therefore been closed. Please see [CONTRIBUTING.md.](https://github.com/benja2998/multitoolplusplus/blob/main/CONTRIBUTING.md)"
+                body: "This issue does not follow a template and has therefore been closed. Please see [CONTRIBUTING.md](https://github.com/benja2998/multitoolplusplus/blob/main/CONTRIBUTING.md)."
               });
             }
