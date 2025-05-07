@@ -35,25 +35,19 @@ jobs:
       - name: Build Windows binary
         run: x86_64-w64-mingw32-g++ -static -static-libgcc -static-libstdc++ -o ./main.exe ./src/*.cpp
 
-      # Step 6: Upload the compiled Linux binary
+      # Step 6: Upload the compiled Linux binary using action-gh-release
       - name: Upload Linux binary to release
-        uses: benja2998/upload-release-asset@v1.1.0
+        uses: softprops/action-gh-release@v1
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./main
-          asset_name: main-linux
-          asset_content_type: application/octet-stream
+          files: ./main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 7: Upload the compiled Windows binary
+      # Step 7: Upload the compiled Windows binary using action-gh-release
       - name: Upload Windows binary to release
-        uses: benja2998/upload-release-asset@v1.1.0
+        uses: softprops/action-gh-release@v1
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./main.exe
-          asset_name: main-windows.exe
-          asset_content_type: application/octet-stream
+          files: ./main.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -69,7 +63,7 @@ jobs:
           echo "$response" > vt_linux_response.json
           ANALYSIS_ID=$(echo "$response" | jq -r '.data.id')
           LINK="https://www.virustotal.com/file/${ANALYSIS_ID}/analysis/"
-          echo "LINUX_VT=$LINK" >> $GITHUB_ENV
+          echo "link=$LINK" >> $GITHUB_OUTPUT
 
       # Step 9: Submit Windows binary to VirusTotal
       - name: Submit Windows binary to VirusTotal
@@ -83,30 +77,30 @@ jobs:
           echo "$response" > vt_windows_response.json
           ANALYSIS_ID=$(echo "$response" | jq -r '.data.id')
           LINK="https://www.virustotal.com/file/${ANALYSIS_ID}/analysis/"
-          echo "WINDOWS_VT=$LINK" >> $GITHUB_ENV
+          echo "link=$LINK" >> $GITHUB_OUTPUT
 
       # Step 10: Append VirusTotal links to the release body
       - name: Append VirusTotal links to the release body
         uses: actions/github-script@v7
         with:
           script: |
-            // Get the release details
+            const linuxLink = process.env['LINUX_VT'] || '${{ steps.vt_linux.outputs.link }}';
+            const windowsLink = process.env['WINDOWS_VT'] || '${{ steps.vt_windows.outputs.link }}';
+
             const { data: release } = await github.rest.repos.getRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
               release_id: context.payload.release.id
             });
 
-            // Update the release body with VirusTotal scan links
-            const updatedBody = `${release.body || ""}
+            const updatedBody = `${release.body || ''}
 
-            Unsure about the legitimacy of the files? See the [workflow](https://github.com/benja2998/multitoolplusplus/blob/main/.github/workflows/build-and-upload.yml) to see they weren't tampered with!
-            
-            🛡 **VirusTotal Scan Results**
-            - [Linux binary scan](https://virustotal.com)
-            - [Windows binary scan](https://virustotal.com)`;
+Unsure about the legitimacy of the files? See the [workflow](https://github.com/benja2998/multitoolplusplus/blob/main/.github/workflows/build-and-upload.yml) to see they weren't tampered with!
 
-            // Update the release with new body content
+🛡 **VirusTotal Scan Results**
+- [Linux binary scan](${linuxLink})
+- [Windows binary scan](${windowsLink})`;
+
             await github.rest.repos.updateRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
