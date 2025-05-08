@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstdlib>
+#include <string>
+#include <thread>
 #include "ansi.hpp"
 
 #ifndef TELEGRAM_HPP
@@ -14,8 +16,10 @@ namespace telegram {
 
         if (result != 0) {
             std::cerr << ansi::RED << "Failed to send message (curl error)" << ansi::RESET << std::endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
         } else {
             std::cout << ansi::GREEN << "Message sent successfully!" << ansi::RESET << std::endl;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     }
 }
