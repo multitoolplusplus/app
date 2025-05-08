@@ -36,14 +36,15 @@ void banner() {
 }
 
 void menu() {
-    std::cout << ansi::ITALIC << ansi::UNDERLINE << ansi::BG_BLUE << ansi::CYAN;
-    std::cout << "--     OPTIONS:          --\n";
+    std::cout << ansi::BOLD << ansi::ITALIC << ansi::UNDERLINE << ansi::BG_BLUE << ansi::CYAN;
+    std::cout << "OPTIONS:                   \n";
+    std::cout << ansi::RESET;
+    std::cout << ansi::UNDERLINE << ansi::BG_BLUE << ansi::CYAN;
     std::cout << "1. exit                    \n";
     std::cout << "2. timer                   \n";
     std::cout << "3. send Discord message    \n";
     std::cout << "4. send Telegram message   \n"; 
     std::cout << "5. generate secure password\n";
-    std::cout << "--                       --\n";
     std::cout << ansi::RESET;
 }
 
