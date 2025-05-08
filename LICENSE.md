@@ -1,3 +1,5 @@
+SPDX-License-Identifier: GPL-3.0-or-later
+
 ## GNU General Public License v3.0
 
 ### You may see the license text here:
