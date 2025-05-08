@@ -50,6 +50,7 @@ void menu() {
     std::cout << "3. send Discord message    \n";
     std::cout << "4. send Telegram message   \n"; 
     std::cout << "5. generate secure password\n";
+    std::cout << "\n";
     std::cout << ansi::RESET;
 }
 
