@@ -1,3 +1,5 @@
+SPDX-License-Identifier: GPL-3.0-or-later
+
 ## multitool++
 
 Copyright (C) 2025 multitool++ contributors
