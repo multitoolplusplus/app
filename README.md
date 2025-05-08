@@ -5,6 +5,8 @@
 [![Build and Upload Binary](https://github.com/benja2998/multitoolplusplus/actions/workflows/build-and-upload.yml/badge.svg?event=release)](https://github.com/benja2998/multitoolplusplus/actions/workflows/build-and-upload.yml)
 [![Update Copyright Year in README.md](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml/badge.svg)](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml)
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
+
 [![Coverage Status](https://coveralls.io/repos/github/benja2998/multitoolplusplus/badge.svg?branch=main)](https://coveralls.io/github/benja2998/multitoolplusplus?branch=main)
 
 ## Installation

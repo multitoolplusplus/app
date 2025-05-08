@@ -23,6 +23,9 @@ jobs:
           # Update the copyright year in README.md (assumes the pattern is "20**")
           sed -i "s/20[0-9][0-9]/$current_year/" README.md
 
+          # Update the copyright year in LICENSE.md (assumes the pattern is "20**")
+          sed -i "s/20[0-9][0-9]/$current_year/" LICENSE.md
+
           # Check if changes were made
           git diff
 
