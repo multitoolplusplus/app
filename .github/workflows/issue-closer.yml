@@ -69,6 +69,14 @@ jobs:
                 state: "closed"
               });
 
+              // Add the spam label
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: ["spam"]
+              });
+
               // And leave a comment
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
