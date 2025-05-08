@@ -6,7 +6,7 @@ namespace console {
     inline void clear() {
 #ifdef _WIN32
         system("cls");
-#elif defined(__linux__) || defined(__APPLE__) || defined(__unix__)
+#elif defined(__linux__)
         system("clear");
 #else
         #include <iostream>

@@ -139,6 +139,28 @@ void initialize() {
     read();
 }
 
+void checkCurlIsInstalled() {
+#ifdef _WIN32
+    std::string curlPath = "C:\\Windows\\System32\\curl.exe";
+    int curl = system("curl --version >nul 2>&1");
+    if (curl != 0) {
+        std::cout << "Curl not installed. Install it by running: winget install cURL.cURL\n";
+        exit(1);
+    }
+#elif defined(__linux__)
+    std::string curlPath = "/usr/bin/curl";
+    int curl = system("curl --version >/dev/null 2>&1");
+    if (curl != 0) {
+        std::cout << "Curl not installed. Install it by running: sudo <your package manager> install curl\n";
+        exit(1);
+    }
+#else
+    std::cout << "Unsupported OS. Please make sure you have modified the source code before compiling for another OS.";
+    exit(10);
+#endif
+}
+
 int main() {
+    checkCurlIsInstalled();
     initialize();
 }
