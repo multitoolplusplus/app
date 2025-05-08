@@ -26,13 +26,18 @@ void initialize();
 void banner() {
     const char* banner = R"(
                   .__   __  .__  __                .__                           
-  _____  __ __|  |_/  |_|__|/  |_  ____   ____ |  |      .__         .__     
+  _____  __ __|  |_/  |_|__|/  |_  ____   ____ |  |      .__         .__ )";
+
+    const char* banner2 = R"(
  /     \|  |  \  |\   __\  \   __\/  _ \ /  _ \|  |    __|  |___   __|  |___ 
-|  Y Y  \  |  /  |_|  | |  ||  | (  <_> |  <_> )  |__ /__    __/  /__    __/ 
+|  Y Y  \  |  /  |_|  | |  ||  | (  <_> |  <_> )  |__ /__    __/  /__    __/ )";
+
+    const char* banner3 = R"(
 |__|_|  /____/|____/__| |__||__|  \____/ \____/|____/    |__|        |__|    
-      \/                                                                     
-)";
-    std::cout << ansi::BOLD << ansi::CYAN << banner << ansi::RESET << "\n";
+      \/                                                                     )";
+    std::cout << ansi::BOLD << ansi::WHITE << banner << ansi::RESET;
+    std::cout << ansi::BOLD << ansi::CYAN << banner2 << ansi::RESET;
+    std::cout << ansi::BOLD << ansi::BLUE << banner3 << ansi::RESET << "\n" <<  "\n";
 }
 
 void menu() {
