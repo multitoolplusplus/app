@@ -110,7 +110,6 @@ void read() {
         for (int i = 0; i < password_length_int; i++) {
             const std::string charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?";
             password += charset[rand() % charset.length()];
-            
         }
         std::cout << ansi::CYAN << "Generated password: " << ansi::RESET << password << "\n";
         std::cout << ansi::CYAN << "Press enter to continue..." << ansi::RESET << "\n";
