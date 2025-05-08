@@ -37,12 +37,13 @@ void banner() {
 
 void menu() {
     std::cout << ansi::ITALIC << ansi::UNDERLINE << ansi::BG_BLUE << ansi::CYAN;
-    std::cout << "--     OPTIONS:       --\n";
-    std::cout << "1. exit                 \n";
-    std::cout << "2. timer                \n";
-    std::cout << "3. send Discord message \n";
-    std::cout << "4. send Telegram message\n"; 
-    std::cout << "--                    --\n";
+    std::cout << "--     OPTIONS:          --\n";
+    std::cout << "1. exit                    \n";
+    std::cout << "2. timer                   \n";
+    std::cout << "3. send Discord message    \n";
+    std::cout << "4. send Telegram message   \n"; 
+    std::cout << "5. generate secure password\n";
+    std::cout << "--                       --\n";
     std::cout << ansi::RESET;
 }
 
@@ -97,6 +98,23 @@ void read() {
         std::getline(std::cin, message);
 
         telegram::send_message(token_id, chat_id, message);
+        initialize();
+    }
+    else if (input == "5") {
+        std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+        std::cout << ansi::CYAN << "Enter a password length: " << ansi::RESET;
+        std::string password_length;
+        std::getline(std::cin, password_length);
+        int password_length_int = std::stoi(password_length);
+        std::string password = "";
+        for (int i = 0; i < password_length_int; i++) {
+            const std::string charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?";
+            password += charset[rand() % charset.length()];
+            
+        }
+        std::cout << ansi::CYAN << "Generated password: " << ansi::RESET << password << "\n";
+        std::cout << ansi::CYAN << "Press enter to continue..." << ansi::RESET << "\n";
+        std::cin.get();
         initialize();
     }
     else {
