@@ -52,7 +52,9 @@ After you run the build script, the executable will be in the build directory.
 - [ ] Send message to Slack bot (see [issue #45](https://github.com/benja2998/multitoolplusplus/issues/45))
 
 ### FAQ
+
 **Q**: Why is the software called "multitool++"?
+
 **A**: This is because the software is written in C++.
 
 ---
