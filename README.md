@@ -37,29 +37,13 @@
 - If your CPU is not x86_64, you may want to compile the software yourself for your architecture.
 
 ### Prerequisites
-- C++ Compiler (if you won't use a precompiled binary)
+- CMake version over 3.10
 - Linux or Windows system (you may be able to run the software on macOS via WINE)
 - Curl installed (check output of curl command in your terminal, most Operating Systems including Windows versions above 10 will have it preinstalled. If you don't have curl, you can try finding a way to install it.)
 
-### Using a compiler
-You will first have to download the source code. We recommend using a GitHub release for stability.
+### Building multitool++
 
-[![see releases](https://img.shields.io/badge/📦_GITHUB_RELEASES-purple)](https://github.com/benja2998/multitoolplusplus/releases)
-
-It's as simple as compiling all .cpp files. For example, if you are on Windows and using G++:
-
-```sh
-cd src # only if your downloaded source code has a src directory
-```
-```sh
-g++ -o main.exe *.cpp
-```
-
-### Using the precompiled binaries
-You can easily download and run a precompiled binary from the releases.
-
-[![download for linux](https://img.shields.io/badge/🐧_LINUX_EXECUTABLE-green)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/multitoolpp-linux)
-[![download for windows](https://img.shields.io/badge/🪟_WINDOWS_EXECUTABLE-blue)](https://github.com/benja2998/multitoolplusplus/releases/latest/download/multitoolpp-windows.exe)
+We generously provide a build.sh or a build.bat to build the software for you.
 
 ## Usage
 
