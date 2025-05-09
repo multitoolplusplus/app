@@ -136,8 +136,6 @@ void read() {
 
 void initialize() {
     console::clear();
-    std::cout << ansi::WHITE << "Hello from Multitool++!" << ansi::RESET << "\n";
-    std::cout << ansi::WHITE << "C++ is a great language!" << ansi::RESET << "\n";
     banner();
     menu();
     read();
