@@ -35,6 +35,8 @@ void banner() {
     const char* banner3 = R"(
 |__|_|  /____/|____/__| |__||__|  \____/ \____/|____/    |__|        |__|    
       \/                                                                     )";
+    
+    std::cout << ansi::BG_BLUE;
     std::cout << ansi::BOLD << ansi::WHITE << banner << ansi::RESET;
     std::cout << ansi::BOLD << ansi::CYAN << banner2 << ansi::RESET;
     std::cout << ansi::BOLD << ansi::BLUE << banner3 << ansi::RESET << "\n" <<  "\n";
