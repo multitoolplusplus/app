@@ -88,4 +88,4 @@ Additionally, you can see the analyses:
 **A**: Too complicated to implement.
 
 ---
-© 2025 multitool++ contributors. Licensed under the [GNU GPL v3.0](./LICENSE).
+© 2025 multitool++ contributors. Multitool++ is free software licensed under the [GNU GPL v3.0](./LICENSE).
