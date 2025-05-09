@@ -33,7 +33,7 @@
 
 ### Prerequisites
 - CMake version over 3.10
-- Linux or Windows system (you may be able to run the software on macOS via WINE)
+- Linux or Windows system
 - Curl installed (check output of curl command in your terminal, most Operating Systems including Windows versions above 10 will have it preinstalled. If you don't have curl, you can try finding a way to install it.)
 - If you're using Windows, you need to use the Visual Studio installer to install "Desktop development with C++".
 
