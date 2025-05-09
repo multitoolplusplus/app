@@ -2,7 +2,6 @@
 
 ## Cross-platform multitool written in C++
 
-[![Build and Upload Binary](https://github.com/benja2998/multitoolplusplus/actions/workflows/build-and-upload.yml/badge.svg?event=release)](https://github.com/benja2998/multitoolplusplus/actions/workflows/build-and-upload.yml)
 [![Update Copyright Year in README.md](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml/badge.svg)](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml)
 
 [![Coverage Status](https://coveralls.io/repos/github/multitoolplusplus/multitoolplusplus/badge.svg?branch=main)](https://coveralls.io/github/multitoolplusplus/multitoolplusplus?branch=main)
@@ -13,8 +12,7 @@
 <ul>
     <li><a href="#system-requirements">System Requirements</a></li>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#using-a-compiler">Using a compiler</a></li>
-    <li><a href="#using-the-precompiled-binaries">Using the precompiled binaries</a></li>
+    <li><a href="#building-multitool">Building multitool++</a></li>
 </ul>
 </details>
 
@@ -22,7 +20,6 @@
 <summary>Usage</summary>
 <ul>
     <li><a href="#features">Features</a></li>
-    <li><a href="#safety">Safety</a></li>
     <li><a href="#faq">FAQ</a></li>
 </ul>
 </details>
@@ -53,22 +50,9 @@ We generously provide a build.sh or a build.bat to build the software for you.
 - [x] Send message to Telegram bot
 - [ ] Send message to Slack bot (see [issue #45](https://github.com/benja2998/multitoolplusplus/issues/45))
 
-### Safety
-You can know that the software is safe as the precompiled binaries are built with this [GitHub Action](./.github/workflows/build-and-upload.yml) and not tampered with.
-
-Additionally, you can see the analyses:
-
-[![analyis proving it isn't malware](https://img.shields.io/badge/🔎_THREAT_INSIGHTS_PORTAL_ANALYSIS_(LINUX)-navy)](https://tip.neiki.dev/file/0db45ef65ba744b4ab071cfb4201ecad6439009d6f839d0669ceb94d89696868)
-[![analysis proving it isn't malware](https://img.shields.io/badge/🔎_THREAT_INSIGHTS_PORTAL_ANALYSIS_(WINDOWS)-navy)](https://tip.neiki.dev/file/295b557df7d111a21262498262e72e26c572e7ec85641013fe4503d788b1ebfb)
-
 ### FAQ
-**Q**: It's detected as malware by Antivirus!  
-
-**A**: Antivirus engines will probably flag new and/or unsigned files.
-
-**Q**: Will there be a native macOS binary?  
-
-**A**: Too complicated to implement.
+**Q**: Why is the software called "multitool++"?
+**A**: This is because the software is written in C++.
 
 ---
 © 2025 multitool++ contributors. Multitool++ is free software licensed under the [GNU GPL v3.0](./LICENSE).
