@@ -45,6 +45,50 @@ We generously provide a build.sh and a build.bat to build the software for you.
 
 After you run the proper build script for your Operating System, the executable will be in the build directory.
 
+### Building a multitool++ release older than v0.5.0
+
+Multitool++ releases older than v0.5.0 do not use CMake. For these, you should use G++ or paste the following CMakeLists.txt:
+
+**For v0.3.0 and newer**
+
+```cmake
+cmake_minimum_required(VERSION 3.10)
+
+project(multitool++ VERSION 0.5.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# include ./src/*.cpp
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+
+# add include directories
+include_directories("src")
+
+# define executable
+add_executable(multitool++ ${SOURCES})
+```
+
+**For v0.2.0 and older**
+
+```cmake
+cmake_minimum_required(VERSION 3.10)
+
+project(multitool++ VERSION 0.5.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# include ./*.cpp
+file(GLOB_RECURSE SOURCES "*.cpp")
+
+# add include directories
+include_directories(".")
+
+# define executable
+add_executable(multitool++ ${SOURCES})
+```
+
 ## Usage
 
 ### Features
