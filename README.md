@@ -69,25 +69,7 @@ include_directories("src")
 add_executable(multitool++ ${SOURCES})
 ```
 
-**For v0.2.0 and older**
-
-```cmake
-cmake_minimum_required(VERSION 3.10)
-
-project(multitool++ VERSION 0.5.0 LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
-
-# include ./*.cpp
-file(GLOB_RECURSE SOURCES "*.cpp")
-
-# add include directories
-include_directories(".")
-
-# define executable
-add_executable(multitool++ ${SOURCES})
-```
+For v0.2.0 and older, use G++.
 
 ## Usage
 
