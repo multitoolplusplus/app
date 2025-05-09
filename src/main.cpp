@@ -25,7 +25,7 @@ void initialize();
 
 void banner() {
     const char* banner = R"(
-                  .__   __  .__  __                .__                           
+              .__   __  .__  __                .__                           
   _____  __ __|  |_/  |_|__|/  |_  ____   ____ |  |      .__         .__ )";
 
     const char* banner2 = R"(
