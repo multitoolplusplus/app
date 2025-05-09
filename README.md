@@ -29,9 +29,11 @@
 ## Installation
 
 ### System requirements
+
 - If you're using Windows, it must not be older than Windows 10. This is because older Windows systems don't preinstall curl. You may be able to get the software working if you install curl manually on an older Windows system.
 
 ### Prerequisites
+
 - CMake version over 3.10
 - Linux or Windows system
 - Curl installed (check output of curl command in your terminal, most Operating Systems including Windows versions above 10 will have it preinstalled. If you don't have curl, you can try finding a way to install it.)
