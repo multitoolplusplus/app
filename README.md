@@ -75,8 +75,8 @@ You can know that the software is safe as the precompiled binaries are built wit
 
 Additionally, you can see the analyses:
 
-[![analyis proving it isn't malware](https://img.shields.io/badge/🔎_THREAT_INSIGHTS_PORTAL_ANALYSIS_(LINUX)-navy)](https://tip.neiki.dev/file/ed26c09a08964564c00627c4c73d3a4c0c0e905c5ac5e99dc2e71b03a775a6be)
-[![analysis proving it isn't malware](https://img.shields.io/badge/🔎_THREAT_INSIGHTS_PORTAL_ANALYSIS_(WINDOWS)-navy)](https://tip.neiki.dev/file/ab49db1e1c5ba6a79b3b5534924a037b84b0ee8f2c721b2f48d57fe1197f2446)
+[![analyis proving it isn't malware](https://img.shields.io/badge/🔎_THREAT_INSIGHTS_PORTAL_ANALYSIS_(LINUX)-navy)](https://tip.neiki.dev/file/0db45ef65ba744b4ab071cfb4201ecad6439009d6f839d0669ceb94d89696868)
+[![analysis proving it isn't malware](https://img.shields.io/badge/🔎_THREAT_INSIGHTS_PORTAL_ANALYSIS_(WINDOWS)-navy)](https://tip.neiki.dev/file/295b557df7d111a21262498262e72e26c572e7ec85641013fe4503d788b1ebfb)
 
 ### FAQ
 **Q**: It's detected as malware by Antivirus!  
