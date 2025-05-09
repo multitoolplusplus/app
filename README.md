@@ -1,6 +1,6 @@
 # multitool++
 
-## Free (as in freedom) software cross-platform multitool written in C++
+## FCross-platform multitool written in C++
 
 [![Build and Upload Binary](https://github.com/benja2998/multitoolplusplus/actions/workflows/build-and-upload.yml/badge.svg?event=release)](https://github.com/benja2998/multitoolplusplus/actions/workflows/build-and-upload.yml)
 [![Update Copyright Year in README.md](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml/badge.svg)](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml)
