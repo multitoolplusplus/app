@@ -41,9 +41,9 @@
 
 ### Building multitool++
 
-We generously provide a build.sh or a build.bat to build the software for you.
+We generously provide a build.sh and a build.bat to build the software for you.
 
-After you run the build script, the executable will be in the build directory.
+After you run the proper build script for your Operating System, the executable will be in the build directory.
 
 ## Usage
 
