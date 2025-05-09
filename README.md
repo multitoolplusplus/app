@@ -40,6 +40,7 @@
 ### Building multitool++
 
 We generously provide a build.sh or a build.bat to build the software for you.
+
 After you run the build script, the executable will be in the build directory.
 
 ## Usage
