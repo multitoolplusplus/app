@@ -13,6 +13,7 @@
     <li><a href="#system-requirements">System Requirements</a></li>
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#building-multitool">Building multitool++</a></li>
+    <li><a href="#installing-dependencies">Installing dependencies</a</li>
 </ul>
 </details>
 
