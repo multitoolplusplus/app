@@ -52,7 +52,16 @@ void read()
         std::cout << "Enter a number of seconds: ";
         std::string seconds;
         std::getline(std::cin, seconds);
-        int seconds_int = std::stoi(seconds);
+        int seconds_int;
+        try {
+            seconds_int = std::stoi(seconds);
+        }
+        catch (const std::invalid_argument& e) {
+            std::cout << "\033[31m" << e.what() << "\033[0m" << "\n";
+        }
+        catch (const std::out_of_range& e) {
+            std::cout << "\033[31m" << e.what() << "\033[0m" << "\n";
+        }
         int timer = seconds_int;
         while (timer > 0)
         {
