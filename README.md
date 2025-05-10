@@ -10,18 +10,24 @@
 <details>
 <summary>Installation</summary>
 
-- [System Requirements](#system-requirements)
-- [Prerequisites](#prerequisites)
-- [Building multitool++](#building-multitool)
-- [Installing dependencies](#installing-dependencies)
+<ul>
+<li><a href="#system-requirements">System requirements</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installing-dependencies">Installing dependencies</a></li>
+<li><a href="#building-multitool">Building multitool++</a></li>
+<li><a href="#building-a-multitool-release-older-than-v050">Building a multitool++ release older than v0.5.0</a></li>
+
+</ul>
 
 </details>
 
 <details>
 <summary>Usage</summary>
 
-- [Features](#features)
-- [FAQ](#faq)
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
 
 </details>
 
