@@ -78,10 +78,12 @@ void read() {
         }
         catch (std::invalid_argument& e) {
             std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+            std::this_thread::sleep_for(std::chrono::seconds(1));
             initialize();
         }
         catch (std::out_of_range& e) {
             std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+            std::this_thread::sleep_for(std::chrono::seconds(1));
             initialize();
         }
         int timer = seconds_int;
@@ -133,10 +135,12 @@ void read() {
         }
         catch (std::invalid_argument& e) {
             std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+            std::this_thread::sleep_for(std::chrono::seconds(1));
             initialize();
         }
         catch (std::out_of_range& e) {
             std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+            std::this_thread::sleep_for(std::chrono::seconds(1));
             initialize();
         }
         std::string password = "";
