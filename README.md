@@ -9,23 +9,23 @@
 ## Table of Contents
 <details>
 <summary>Installation</summary>
-<ul>
-    <li><a href="#system-requirements">System Requirements</a></li>
-    <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#building-multitool">Building multitool++</a></li>
-    <li><a href="#installing-dependencies">Installing dependencies</a</li>
-</ul>
+
+- [System Requirements](#system-requirements)
+- [Prerequisites](#prerequisites)
+- [Building multitool++](#building-multitool)
+- [Installing dependencies](#installing-dependencies)
+
 </details>
 
 <details>
 <summary>Usage</summary>
-<ul>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#faq">FAQ</a></li>
-</ul>
+
+- [Features](#features)
+- [FAQ](#faq)
+
 </details>
 
-----
+---
 
 ## Installation
 
