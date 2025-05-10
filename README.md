@@ -1,4 +1,4 @@
-# multitool++
+# multitool++i
 
 ## Cross-platform multitool written in C++
 
@@ -7,7 +7,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/multitoolplusplus/multitoolplusplus/badge.svg?branch=main)](https://coveralls.io/github/multitoolplusplus/multitoolplusplus?branch=main)
 
 ## Table of Contents
-<details>
+<details
 <summary>Installation</summary>
 <ul>
     <li><a href="#system-requirements">System Requirements</a></li>
@@ -42,7 +42,7 @@
 
 ### Installing dependencies
 
-- Windows
+#### Windows
 
 Install [Visual Studio 2022.](https://visualstudio.microsoft.com/downloads/)
 
@@ -62,7 +62,7 @@ cmake --version
 ```
 If you get an error, visit [this page](https://cmake.org/download/) to download CMake.
 
-### Linux
+#### Linux
 
 Using your distro's package manager, install CMake and install GCC to get G++.
 
