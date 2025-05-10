@@ -44,7 +44,7 @@
 
 #### Windows
 
-Install [Visual Studio 2025.](https://visualstudio.microsoft.com/downloads/)
+Install [Visual Studio](https://visualstudio.microsoft.com/downloads/) (not the code version).
 
 In the installer for it, make sure you install "Desktop development with C++".
 
