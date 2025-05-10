@@ -40,6 +40,60 @@
 - If you're using Windows, you need to use the Visual Studio installer to install "Desktop development with C++".
 - If you're using Linux, you need to install GCC which will give you G++.
 
+### Installing dependencies
+
+- Windows
+
+Install [Visual Studio 2022.](https://visualstudio.microsoft.com/downloads/)
+
+In the installer for it, make sure you install "Desktop development with C++".
+
+Then, run the following command in your terminal:
+```cmd
+curl --version
+```
+If you get an error, run the following command:
+```cmd
+winget install cURL.cURL
+```
+Then, run the following command in your terminal:
+```cmd
+cmake --version
+```
+If you get an error, visit [this page](https://cmake.org/download/) to download CMake.
+
+### Linux
+
+Using your distro's package manager, install CMake and install GCC to get G++.
+
+- **Debian-based**
+
+```bash
+sudo apt install build-essential gcc cmake
+```
+
+- **Arch-based**
+
+```bash
+sudo pacman -S gcc cmake
+```
+
+- **Red Hat-based**
+
+```bash
+sudo dnf install gcc gcc-c++ cmake
+```
+
+- **OpenSUSE**
+
+```bash
+sudo zypper install gcc gcc-c++ cmake
+```
+
+#### macOS
+
+macOS support is unplanned.
+
 ### Building multitool++
 
 First, get the [archive](https://github.com/multitoolplusplus/multitoolplusplus/archive/refs/tags/v1.0.0.zip).
