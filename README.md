@@ -71,30 +71,30 @@ If you get an error, visit [this page](https://cmake.org/download/) to download 
 
 #### Linux
 
-Using your distro's package manager, install CMake and install GCC to get G++.
+Using your distro's package manager, install CMake, GCC and curl.
 
 - **Debian-based**
 
 ```bash
-sudo apt install build-essential gcc cmake
+sudo apt install build-essential gcc cmake curl
 ```
 
 - **Arch-based**
 
 ```bash
-sudo pacman -S gcc cmake
+sudo pacman -S gcc cmake curl
 ```
 
 - **Red Hat-based**
 
 ```bash
-sudo dnf install gcc gcc-c++ cmake
+sudo dnf install gcc gcc-c++ cmake curl
 ```
 
 - **OpenSUSE**
 
 ```bash
-sudo zypper install gcc gcc-c++ cmake
+sudo zypper install gcc gcc-c++ cmake curl
 ```
 
 #### macOS
