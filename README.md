@@ -38,6 +38,7 @@
 - Linux or Windows system
 - Curl installed (check output of curl command in your terminal, most Operating Systems including Windows versions above 10 will have it preinstalled. If you don't have curl, you can try finding a way to install it.)
 - If you're using Windows, you need to use the Visual Studio installer to install "Desktop development with C++".
+- If you're using Linux, you need to install GCC which will give you G++.
 
 ### Building multitool++
 
