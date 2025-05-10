@@ -7,7 +7,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/multitoolplusplus/multitoolplusplus/badge.svg?branch=main)](https://coveralls.io/github/multitoolplusplus/multitoolplusplus?branch=main)
 
 ## Table of Contents
-<details
+<details>
 <summary>Installation</summary>
 <ul>
     <li><a href="#system-requirements">System Requirements</a></li>
