@@ -15,10 +15,10 @@ namespace telegram {
         int result = system(command.c_str());
 
         if (result != 0) {
-            std::cerr << ansi::RED << "Failed to send message (curl error)" << ansi::RESET << std::endl;
+            std::cerr << ansi::RED << "Failed to send message (curl error)" << ansi::RESET << "\n";
             std::this_thread::sleep_for(std::chrono::seconds(1));
         } else {
-            std::cout << ansi::GREEN << "Message sent successfully!" << ansi::RESET << std::endl;
+            std::cout << ansi::GREEN << "Message sent successfully!" << ansi::RESET << "\n";
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     }

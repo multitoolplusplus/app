@@ -72,7 +72,18 @@ void read() {
         std::cout << ansi::CYAN << "Enter a number of seconds: " << ansi::RESET;
         std::string seconds;
         std::getline(std::cin, seconds);
-        int seconds_int = std::stoi(seconds);
+        int seconds_int;
+        try {
+            seconds_int = std::stoi(seconds);
+        }
+        catch (std::invalid_argument& e) {
+            std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+            initialize();
+        }
+        catch (std::out_of_range& e) {
+            std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+            initialize();
+        }
         int timer = seconds_int;
         while (timer > 0) {
             std::cout << ansi::WHITE << timer << ansi::RESET << "\n";
@@ -116,7 +127,18 @@ void read() {
         std::cout << ansi::CYAN << "Enter a password length: " << ansi::RESET;
         std::string password_length;
         std::getline(std::cin, password_length);
-        int password_length_int = std::stoi(password_length);
+        int password_length_int;
+        try {
+            password_length_int = std::stoi(password_length);
+        }
+        catch (std::invalid_argument& e) {
+            std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+            initialize();
+        }
+        catch (std::out_of_range& e) {
+            std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+            initialize();
+        }
         std::string password = "";
         for (int i = 0; i < password_length_int; i++) {
             const std::string charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?";

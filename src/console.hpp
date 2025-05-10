@@ -10,7 +10,7 @@ namespace console {
         system("clear");
 #else
         #include <iostream>
-        std::cout << "Unsupported OS. Please make sure you have modified the source code before compiling for another OS.";
+        std::cout << "Unsupported OS. Please make sure you have modified the source code before compiling for another OS.\n";
         exit(10);
 #endif
     }
