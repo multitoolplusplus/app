@@ -34,6 +34,9 @@ jobs:
       # Run tests
       - name: Run tests
         run: |
+          # set term variable to xterm-256color
+          export TERM=xterm-256color
+          # run the test
           echo "E" | ./test
           
       # Generate coverage report using lcov
