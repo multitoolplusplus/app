@@ -1,4 +1,4 @@
-# multitool++i
+# multitool++
 
 ## Cross-platform multitool written in C++
 
