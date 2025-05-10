@@ -9,19 +9,26 @@
 ## Table of Contents
 <details>
 <summary>Installation</summary>
+
 <ul>
-    <li><a href="#system-requirements">System Requirements</a></li>
-    <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#building-multitool">Building multitool++</a></li>
+<li><a href="#system-requirements">System requirements</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installing-dependencies">Installing dependencies</a></li>
+<li><a href="#building-multitool">Building multitool++</a></li>
+<li><a href="#building-a-multitool-release-older-than-v050">Building a multitool++ release older than v0.5.0</a></li>
+
 </ul>
+
 </details>
 
 <details>
 <summary>Usage</summary>
+
 <ul>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#faq">FAQ</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#faq">FAQ</a></li>
 </ul>
+
 </details>
 
 ---
@@ -39,6 +46,60 @@
 - Curl installed (check output of curl command in your terminal, most Operating Systems including Windows versions above 10 will have it preinstalled. If you don't have curl, you can try finding a way to install it.)
 - If you're using Windows, you need to use the Visual Studio installer to install "Desktop development with C++".
 - If you're using Linux, you need to install GCC which will give you G++.
+
+### Installing dependencies
+
+#### Windows
+
+Install [Visual Studio](https://visualstudio.microsoft.com/downloads/) (not the code version).
+
+In the installer for it, make sure you install "Desktop development with C++".
+
+Then, run the following command in your terminal:
+```cmd
+curl --version
+```
+If you get an error, run the following command:
+```cmd
+winget install cURL.cURL
+```
+Then, run the following command in your terminal:
+```cmd
+cmake --version
+```
+If you get an error, visit [this page](https://cmake.org/download/) to download CMake.
+
+#### Linux
+
+Using your distro's package manager, install CMake, GCC and curl.
+
+- **Debian-based**
+
+```bash
+sudo apt install build-essential gcc cmake curl
+```
+
+- **Arch-based**
+
+```bash
+sudo pacman -S gcc cmake curl
+```
+
+- **Red Hat-based**
+
+```bash
+sudo dnf install gcc gcc-c++ cmake curl
+```
+
+- **OpenSUSE**
+
+```bash
+sudo zypper install gcc gcc-c++ cmake curl
+```
+
+#### macOS
+
+macOS support is unplanned.
 
 ### Building multitool++
 
