@@ -68,7 +68,18 @@ void read()
         std::cout << "\033[35mEnter a number of seconds: \033[0m";
         std::string seconds;
         std::getline(std::cin, seconds);
-        int seconds_int = std::stoi(seconds);
+        int seconds_int;
+        try {
+            seconds_int = std::stoi(seconds);
+        }
+        catch (const std::invalid_argument& e) {
+            std::cout << "\033[31m" << e.what() << "\033[0m" << "\n";
+            initialize();
+        }
+        catch (const std::out_of_range& e) {
+            std::cout << "\033[31m" << e.what() << "\033[0m" << "\n";
+            initialize();
+        }
         int timer = seconds_int;
         while (timer > 0)
         {
