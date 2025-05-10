@@ -41,6 +41,8 @@
 
 ### Building multitool++
 
+First, get the [tarball](https://github.com/multitoolplusplus/multitoolplusplus/archive/refs/tags/v0.5.1.tar.gz).
+
 We generously provide a build.sh and a build.bat to build the software for you.
 
 After you run the proper build script for your Operating System, the executable will be in the build directory.
