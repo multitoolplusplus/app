@@ -6,6 +6,7 @@ This is the status of the current versions of this software.
 
 | Version | End Of Life
 | ------- |  -------------- 
+| 1.0.x   | August 30, 2025
 | 0.5.x   | July 30, 2025
 | 0.4.x   | July 20, 2025
 | 0.3.x   | June 30, 2025
