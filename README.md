@@ -109,6 +109,15 @@ We generously provide a build.sh and a build.bat to build the software for you.
 
 After you run the proper build script for your Operating System, the executable will be in the build directory.
 
+You may also build it manually:
+
+```sh
+mkdir build
+cd build
+cmake ..
+cmake --build .
+```
+
 ### Building a multitool++ release older than v0.5.0
 
 Multitool++ releases older than v0.5.0 do not use CMake. For these, you should use G++ or paste the following CMakeLists.txt:
