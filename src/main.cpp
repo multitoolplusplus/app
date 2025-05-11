@@ -1,3 +1,7 @@
+/*
+    * multitool++
+    * main.cpp
+*/
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -5,6 +9,8 @@
 #include "discord.hpp"
 #include "telegram.hpp"
 #include "console.hpp"
+#include "char.hpp"
+#include "calculator_shell.hpp"
 
 #ifdef _WIN32
     #include <windows.h>
@@ -29,29 +35,12 @@
     * If you're reading this section, you may want to make a pull request to expand it
 */
 
-char get_char() {
-#ifdef _WIN32
-    return _getch();
-#elif defined(__linux__)
-    struct termios oldt, newt;
-    char ch;
-    tcgetattr(STDIN_FILENO, &oldt);
-    newt = oldt;
-    newt.c_lflag &= ~(ICANON | ECHO);
-    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-    ch = getchar();
-    tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-    return ch;
-#else
-    return '\0';
-#endif
-}
-
 std::string checked1 = "[x]";
 std::string checked2 = "[ ]";
 std::string checked3 = "[ ]";
 std::string checked4 = "[ ]";
 std::string checked5 = "[ ]";
+std::string checked6 = "[ ]";
 
 void initialize();
 
@@ -167,7 +156,7 @@ void option_password() {
     }
     std::cout << ansi::GREEN << "Generated password: " << ansi::RESET << password << "\n";
     std::cout << ansi::CYAN << "Press any key to continue...\n" << ansi::RESET;
-    get_char();
+    char_utils::get_char();
     initialize();
 }
 
@@ -183,13 +172,14 @@ void menu() {
     std::cout << checked3 << " send Discord message    \n";
     std::cout << checked4 << " send Telegram message   \n"; 
     std::cout << checked5 << " generate secure password\n";
+    std::cout << checked6 << " calculator shell        \n";
     std::cout << "\n";
     std::cout << ansi::RESET;
     std::cout << ansi::CYAN << "Use W/S to navigate, E to select.\n" << ansi::RESET;
 }
 
 void read() {
-    char check = get_char();
+    char check = char_utils::get_char();
     //std::cout << ansi::CYAN << "Validating choice... " << ansi::RESET;
 
     if (check == 'w' || check == 'W') {
@@ -208,6 +198,10 @@ void read() {
         else if (checked5 == "[x]") {
             checked5 = "[ ]";
             checked4 = "[x]";
+        }
+        else if (checked6 == "[x]") {
+            checked6 = "[ ]";
+            checked5 = "[x]";
         }
         initialize();
     }
@@ -228,6 +222,10 @@ void read() {
             checked4 = "[ ]";
             checked5 = "[x]";
         }
+        else if (checked5 == "[x]") {
+            checked5 = "[ ]";
+            checked6 = "[x]";
+        }
         initialize();
     }
     else if (check == 'e' || check == 'E') {
@@ -245,6 +243,11 @@ void read() {
         }
         else if (checked5 == "[x]") {
             option_password();
+        }
+        else if (checked6 == "[x]") {
+            std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+            std::cout << ansi::BOLD << ansi::ITALIC << ansi::CYAN << "Welcome to the calculator shell, type 'help' for commands.\n" << ansi::RESET;
+            option_shell();
         }
     }
     else {
