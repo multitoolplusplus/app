@@ -65,7 +65,7 @@ cmake --version
 ```
 If you get an error, visit [this page](https://cmake.org/download/) to download CMake.
 
-You should then install [Git](git-scm.com/downloads/win).
+You should then install [Git](https://git-scm.com/downloads/win).
 
 #### Linux
 
