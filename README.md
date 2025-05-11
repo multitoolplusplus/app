@@ -2,10 +2,6 @@
 
 ## Cross-platform multitool written in C++
 
-[![Update Copyright Year in README.md](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml/badge.svg)](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml)
-
-[![Coverage Status](https://coveralls.io/repos/github/multitoolplusplus/app/badge.svg?branch=main)](https://coveralls.io/github/multitoolplusplus/app?branch=main)
-
 ## Table of Contents
 <details>
 <summary>Installation</summary>
@@ -103,7 +99,13 @@ macOS support is unplanned.
 
 ### Building multitool++
 
-First, get the [zipball](https://codeberg.org/multitoolplusplus/app/archive/v1.0.0.zip) or [tarball](https://codeberg.org/multitoolplusplus/app/archive/v1.0.0.tar.gz).
+You may want to clone the repository for the latest changes:
+
+```sh
+git clone https://codeberg.org/multitoolplusplus/app.git
+```
+
+If you want stability, get the latest version from the releases.
 
 We generously provide a build.sh and a build.bat to build the software for you.
 
