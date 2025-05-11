@@ -4,7 +4,7 @@
 
 [![Update Copyright Year in README.md](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml/badge.svg)](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml)
 
-[![Coverage Status](https://coveralls.io/repos/github/multitoolplusplus/multitoolplusplus/badge.svg?branch=main)](https://coveralls.io/github/multitoolplusplus/multitoolplusplus?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/multitoolplusplus/app/badge.svg?branch=main)](https://coveralls.io/github/multitoolplusplus/app?branch=main)
 
 ## Table of Contents
 <details>
@@ -103,11 +103,20 @@ macOS support is unplanned.
 
 ### Building multitool++
 
-First, get the [archive](https://github.com/multitoolplusplus/multitoolplusplus/archive/refs/tags/v1.0.0.zip).
+First, get the [archive](https://github.com/multitoolplusplus/app/zipball/main).
 
 We generously provide a build.sh and a build.bat to build the software for you.
 
 After you run the proper build script for your Operating System, the executable will be in the build directory.
+
+You may also build it manually:
+
+```sh
+mkdir build
+cd build
+cmake ..
+cmake --build .
+```
 
 ### Building a multitool++ release older than v0.5.0
 
