@@ -101,13 +101,8 @@ macOS support is unplanned.
 
 ### Building multitool++
 
-You may want to clone the repository for the latest changes:
-
-```sh
-git clone https://codeberg.org/multitoolplusplus/app.git
-```
-
-If you want stability, get the latest version from the releases.
+[![tarball](https://img.shields.io/badge/tarball-v1.0.0-green?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.0.0.tar.gz)
+[![zipball](https://img.shields.io/badge/zipball-v1.0.0-blue?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.0.0.zip)
 
 We generously provide a build.sh and a build.bat to build the software for you.
 
