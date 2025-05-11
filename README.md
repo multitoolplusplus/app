@@ -65,32 +65,34 @@ cmake --version
 ```
 If you get an error, visit [this page](https://cmake.org/download/) to download CMake.
 
+You should then install [Git](git-scm.com/downloads/win).
+
 #### Linux
 
-Using your distro's package manager, install CMake, GCC and curl.
+Using your distro's package manager, install CMake, GCC, Git and curl.
 
 - **Debian-based**
 
 ```bash
-sudo apt install build-essential gcc cmake curl
+sudo apt install build-essential gcc cmake curl git
 ```
 
 - **Arch-based**
 
 ```bash
-sudo pacman -S gcc cmake curl
+sudo pacman -S gcc cmake curl git
 ```
 
 - **Red Hat-based**
 
 ```bash
-sudo dnf install gcc gcc-c++ cmake curl
+sudo dnf install gcc gcc-c++ cmake curl git
 ```
 
 - **OpenSUSE**
 
 ```bash
-sudo zypper install gcc gcc-c++ cmake curl
+sudo zypper install gcc gcc-c++ cmake curl git
 ```
 
 #### macOS
@@ -153,7 +155,9 @@ For v0.2.0 and older, use G++.
 - [x] Timer
 - [x] Send message to Discord webhook
 - [x] Send message to Telegram bot
-- [ ] Send message to Slack bot (see [issue #45](https://github.com/benja2998/multitoolplusplus/issues/45))
+- [ ] Send message to Slack bot (see [issue #45](https://codeberg.org/multitoolplusplus/app/issues/45))
+- [x] Generate secure password
+- [x] Calculator shell (not in v1.0.0)
 
 ### FAQ
 
