@@ -4,7 +4,7 @@
 
 [![Update Copyright Year in README.md](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml/badge.svg)](https://github.com/benja2998/multitoolplusplus/actions/workflows/copyright.yml)
 
-[![Coverage Status](https://coveralls.io/repos/github/multitoolplusplus/multitoolplusplus/badge.svg?branch=main)](https://coveralls.io/github/multitoolplusplus/multitoolplusplus?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/multitoolplusplus/app/badge.svg?branch=main)](https://coveralls.io/github/multitoolplusplus/app?branch=main)
 
 ## Table of Contents
 <details>
