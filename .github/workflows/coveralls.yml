@@ -37,7 +37,7 @@ jobs:
           # set term variable to xterm-256color
           export TERM=xterm-256color
           # run the test
-          echo "E" | ./test
+          printf "S\nE\n5\n" | ./test
           
       # Generate coverage report using lcov
       - name: Generate lcov report
