@@ -103,7 +103,7 @@ macOS support is unplanned.
 
 ### Building multitool++
 
-First, get the [archive](https://github.com/multitoolplusplus/multitoolplusplus/archive/refs/tags/v1.0.0.zip).
+First, get the [archive](https://github.com/multitoolplusplus/app/zipball/main).
 
 We generously provide a build.sh and a build.bat to build the software for you.
 
