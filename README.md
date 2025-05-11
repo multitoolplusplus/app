@@ -2,6 +2,8 @@
 
 ## Cross-platform multitool written in C++
 
+[![Security Policy](https://img.shields.io/badge/SECURITY_POLICY-navy?style=for-the-badge)](./SECURITY.md)
+
 ## Table of Contents
 <details>
 <summary>Installation</summary>
