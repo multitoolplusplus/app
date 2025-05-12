@@ -11,8 +11,6 @@ on:
 jobs:
   test:
     runs-on: docker
-    container:
-      image: ubuntu:latest
 
     steps:
       - name: Checkout code
