@@ -1,11 +1,11 @@
 # Contributing to Multitool++
 Thank you for your interest in contributing to Multitool++! Here is how to get started:
 ## Forking the repository
-You can visit [this link](https://github.com/benja2998/multitoolplusplus/fork) to fork the repository.
+You can visit [this link](https://codeberg.org/multitoolplusplus/app/fork) to fork the repository.
 ## Making your first change
 You may want to clone your fork locally:
 ```bash
-git clone https://github.com/<your_username>/multitoolplusplus # assuming you didn't change the name
+git clone https://codeberg.org/<your_username>/app # assuming you didn't change the name
 ```
 Alternatively, you can edit files directly from the web interface.
 
