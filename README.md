@@ -103,8 +103,8 @@ macOS support is unplanned.
 
 ### Building multitool++
 
-[![tarball](https://img.shields.io/badge/tarball-v1.0.0-green?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.0.0.tar.gz)
-[![zipball](https://img.shields.io/badge/zipball-v1.0.0-blue?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.0.0.zip)
+[![tarball](https://img.shields.io/badge/tarball-v1.1.0-green?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.1.0.tar.gz)
+[![zipball](https://img.shields.io/badge/zipball-v1.1.0-blue?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.1.0.zip)
 
 We generously provide a build.sh and a build.bat to build the software for you.
 
@@ -154,7 +154,7 @@ For v0.2.0 and older, use G++.
 - [x] Send message to Telegram bot
 - [ ] Send message to Slack bot (see [issue #45](https://codeberg.org/multitoolplusplus/app/issues/45))
 - [x] Generate secure password
-- [x] Calculator shell (not in v1.0.0)
+- [x] Calculator shell
 
 ### FAQ
 
