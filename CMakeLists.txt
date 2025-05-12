@@ -13,3 +13,6 @@ include_directories("src")
 
 # define executable
 add_executable(multitool++ ${SOURCES})
+
+# enable testing
+enable_testing()
