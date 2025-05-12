@@ -25,7 +25,6 @@ inline void option_shell() {
         option_shell();
     }
     else if (command == "exit") {
-        exit(0);
     }
     else if (command == "clear") {
         console::clear();
