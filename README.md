@@ -2,11 +2,11 @@
 
 ## Cross-platform multitool written in C++
 
-[![Security Policy](https://img.shields.io/badge/SECURITY_POLICY-1b0bb5?style=for-the-badge)](./SECURITY.md)
-[![Privacy Policy](https://img.shields.io/badge/PRIVACY_POLICY-6f0bb5?style=for-the-badge)](./PRIVACY.md)
-[![Contribution Guidelines](https://img.shields.io/badge/CONTRIBUTING-0358ad?style=for-the-badge)](./CONTRIBUTING.md)
-[![Code of Conduct](https://img.shields.io/badge/CODE_OF_CONDUCT-03ad90?style=for-the-badge)](./CODE_OF_CONDUCT.md)
-[![License](https://img.shields.io/badge/GPL--3.0_LICENSE-5bc118?style=for-the-badge)](./LICENSE)
+[![Security Policy](https://img.shields.io/badge/SECURITY_POLICY-navy?style=for-the-badge)](./SECURITY.md)
+[![Privacy Policy](https://img.shields.io/badge/PRIVACY_POLICY-navy?style=for-the-badge)](./PRIVACY.md)
+[![Contribution Guidelines](https://img.shields.io/badge/CONTRIBUTING-navy?style=for-the-badge)](./CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/CODE_OF_CONDUCT-navy?style=for-the-badge)](./CODE_OF_CONDUCT.md)
+[![License](https://img.shields.io/badge/GPL--3.0_LICENSE-navy?style=for-the-badge)](./LICENSE)
 
 ## Table of Contents
 <details>
