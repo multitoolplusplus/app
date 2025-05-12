@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    runs-on: docker
+    runs-on: codeberg-tiny
 
     steps:
       - name: Checkout code
