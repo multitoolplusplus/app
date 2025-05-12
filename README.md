@@ -154,7 +154,7 @@ For v0.2.0 and older, use G++.
 - [x] Send message to Telegram bot
 - [ ] Send message to Slack bot (see [issue #45](https://codeberg.org/multitoolplusplus/app/issues/45))
 - [x] Generate secure password
-- [x] Calculator shell (not in v1.0.0)
+- [x] Calculator shell
 
 ### FAQ
 
