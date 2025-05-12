@@ -2,11 +2,11 @@
 
 ## Cross-platform multitool written in C++
 
-[![Security Policy](https://img.shields.io/badge/SECURITY_POLICY-navy?style=for-the-badge)](./SECURITY.md)
-[![Contribution Guidelines](https://img.shields.io/badge/CONTRIBUTING-blue?style=for-the-badge)](./CONTRIBUTING.md)
-[![Code of Conduct](https://img.shields.io/badge/CODE_OF_CONDUCT-navy?style=for-the-badge)](./CODE_OF_CONDUCT.md)
-[![License](https://img.shields.io/badge/LICENSE-blue?style=for-the-badge)](./LICENSE)
-[![Privacy Policy](https://img.shields.io/badge/PRIVACY_POLICY-navy?style=for-the-badge)](./PRIVACY.md)
+[![Security Policy](https://img.shields.io/badge/SECURITY_POLICY-1b0bb5?style=for-the-badge)](./SECURITY.md)
+[![Privacy Policy](https://img.shields.io/badge/PRIVACY_POLICY-6f0bb5?style=for-the-badge)](./PRIVACY.md)
+[![Contribution Guidelines](https://img.shields.io/badge/CONTRIBUTING-0358ad?style=for-the-badge)](./CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/CODE_OF_CONDUCT-03ad90?style=for-the-badge)](./CODE_OF_CONDUCT.md)
+[![License](https://img.shields.io/badge/GPL--3.0_LICENSE-5bc118?style=for-the-badge)](./LICENSE)
 
 ## Table of Contents
 <details>
@@ -108,7 +108,7 @@ macOS support is unplanned.
 ### Building multitool++
 
 [![tarball](https://img.shields.io/badge/tarball-v1.1.1-green?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.1.1.tar.gz)
-[![zipball](https://img.shields.io/badge/zipball-v1.1.1-green?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.1.1.zip)
+[![zipball](https://img.shields.io/badge/zipball-v1.1.1-blue?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.1.1.zip)
 
 We generously provide a build.sh and a build.bat to build the software for you.
 
