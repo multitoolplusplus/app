@@ -3,6 +3,10 @@
 ## Cross-platform multitool written in C++
 
 [![Security Policy](https://img.shields.io/badge/SECURITY_POLICY-navy?style=for-the-badge)](./SECURITY.md)
+[![Contribution Guidelines](https://img.shields.io/badge/CONTRIBUTING-blue?style=for-the-badge)](./CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/CODE_OF_CONDUCT-navy?style=for-the-badge)](./CODE_OF_CONDUCT.md)
+[![License](https://img.shields.io/badge/LICENSE-blue?style=for-the-badge)](./LICENSE)
+[![Privacy Policy](https://img.shields.io/badge/PRIVACY_POLICY-navy?style=for-the-badge)](./PRIVACY.md)
 
 ## Table of Contents
 <details>
@@ -104,7 +108,7 @@ macOS support is unplanned.
 ### Building multitool++
 
 [![tarball](https://img.shields.io/badge/tarball-v1.1.1-green?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.1.1.tar.gz)
-[![zipball](https://img.shields.io/badge/zipball-v1.1.1-blue?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.1.1.zip)
+[![zipball](https://img.shields.io/badge/zipball-v1.1.1-green?style=for-the-badge)](https://codeberg.org/multitoolplusplus/app/archive/v1.1.1.zip)
 
 We generously provide a build.sh and a build.bat to build the software for you.
 
