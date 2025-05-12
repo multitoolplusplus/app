@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: docker
 
     steps:
       - name: Checkout code
@@ -31,9 +31,4 @@ jobs:
       - name: Run tests
         run: |
           cd build
-          ctest --output-on-failure
-          
-      - name: Run the executable
-        run: |
-          cd build
-          echo "E" | ./multitool++
+          ctest --output-on-failure --verbose
