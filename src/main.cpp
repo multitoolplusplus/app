@@ -248,6 +248,7 @@ void read() {
             std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
             std::cout << ansi::BOLD << ansi::ITALIC << ansi::CYAN << "Welcome to the calculator shell, type 'help' for commands.\n" << ansi::RESET;
             option_shell();
+            initialize();
         }
     }
     else {
