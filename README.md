@@ -164,3 +164,4 @@ For v0.2.0 and older, use G++.
 
 ---
 © 2025 multitool++ contributors. Multitool++ is free software licensed under the [GNU GPL v3.0](./LICENSE).
+
