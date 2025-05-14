@@ -11,3 +11,6 @@
 ---
 
 We have a wiki where you can find everything you need, like instructions to build the software! Check it out [here](https://multitoolplusplus.codeberg.page/wiki).
+
+### Screenshot (v1.1.1)
+![Screenshot v1.1.1](./assets/v1.1.1.png)
