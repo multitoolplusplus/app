@@ -25,5 +25,5 @@ If you want a quick guide do:
   - Install CMake
   - Run `build.sh`
 
-### Screenshot (v1.1.1)
-![Screenshot v1.1.1](./assets/v1.1.1.png)
+### Screenshot (v1.1.2)
+![Screenshot v1.1.2](./assets/v1.1.1.png)
