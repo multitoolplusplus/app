@@ -1,6 +1,8 @@
 /*
-    * multitool++
-    * main.cpp
+    * multitool++ - a command line utility for various purposes
+    * Author: benja2998@noreply.codeberg.org
+    * License: GPL-3.0
+    * That means you must make any software that uses this source code GPL-3.0 licensed.
 */
 #include <iostream>
 #include <string>
@@ -45,6 +47,7 @@ std::string checked6 = "[ ]";
 void initialize();
 
 void banner() {
+    /* Using raw string literals for multiline strings. */
     const char* banner = R"(
               .__   __  .__  __                .__                           
   _____  __ __|  |_/  |_|__|/  |_  ____   ____ |  |      .__         .__     )";
@@ -57,6 +60,7 @@ void banner() {
 |__|_|  /____/|____/__| |__||__|  \____/ \____/|____/    |__|        |__|    
       \/                                                                     )";
     
+    /* Print using ansi color codes for a fade effect from white to blue. */
     std::cout << ansi::BG_BLACK;
     std::cout << ansi::BOLD << ansi::WHITE << banner << ansi::RESET;
     std::cout << ansi::BG_BLACK;
@@ -131,6 +135,10 @@ void option_telegram() {
 }
 
 void option_password() {
+
+    /* Use a seed */
+    srand(time(NULL));
+
     std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
     std::cout << ansi::CYAN << "Enter password length: " << ansi::RESET;
     std::string length;
@@ -151,7 +159,7 @@ void option_password() {
     }
     std::string password = "";
     for (int i = 0; i < length_int; i++) {
-        const std::string charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?";
+        const std::string charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?~/";
         password += charset[rand() % charset.length()];
     }
     std::cout << ansi::GREEN << "Generated password: " << ansi::RESET << password << "\n";
@@ -180,8 +188,11 @@ void menu() {
 
 void read() {
     char check = char_utils::get_char();
+    /* Removed  this line below since it looks bad. */
     //std::cout << ansi::CYAN << "Validating choice... " << ansi::RESET;
 
+    /* Horrific, janky W/S navigation. I should have used ncurses instead of writing this garbage. */
+    /* But it works... */
     if (check == 'w' || check == 'W') {
         if (checked2 == "[x]") {
             checked2 = "[ ]";
@@ -248,7 +259,9 @@ void read() {
             std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
             std::cout << ansi::BOLD << ansi::ITALIC << ansi::CYAN << "Welcome to the calculator shell, type 'help' for commands.\n" << ansi::RESET;
             option_shell();
-            initialize();
+            initialize(); /* Workaround for not being able to call initialize() in the header file. 
+                * Since option_shell() runs in the same thread, initialize() will only run after the user exits the calculator shell.
+            */
         }
     }
     else {
@@ -258,6 +271,8 @@ void read() {
     }
 }
 
+/* Probably the most useful function in the program. */
+/* Helps a lot for returning to the main menu. */
 void initialize() {
     console::clear();
     menu();
@@ -268,6 +283,7 @@ void checkCurlIsInstalled() {
 #ifdef _WIN32
     int curl = system("curl --version >nul 2>&1");
     if (curl != 0) {
+        /* Either the user is not intelligent life and removed curl.exe or they are running an old version of Windows. */
         std::cout << "Curl not installed. Install it by running: winget install cURL.cURL\n";
         exit(1);
     }
