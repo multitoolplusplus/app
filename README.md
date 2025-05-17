@@ -15,4 +15,4 @@ We have a wiki where you can find everything you need, like instructions to buil
 ### Screenshot (v1.1.1)
 ![Screenshot v1.1.1](./assets/v1.1.1.png)
 
-For pre-compiled binaries, you may be able to find them in artifacts of the [actions](https://codeberg.org/multitoolplusplus/app/actions) of this repository. Only Linux pre-compiled binaries are available at the moment.
+For pre-compiled binaries, you may be able to find them in artifacts of the [actions](https://github.com/multitoolplusplus/app/actions) of this repository. Only Linux pre-compiled binaries are available at the moment.
