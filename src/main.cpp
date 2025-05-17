@@ -1,6 +1,8 @@
 /*
     * multitool++ - a command line utility for various purposes
     * Author: benja2998@noreply.codeberg.org
+    * License: GPL-3.0
+    * That means you must make any software that uses this program GPL-3.0 licensed.
 */
 #include <iostream>
 #include <string>
