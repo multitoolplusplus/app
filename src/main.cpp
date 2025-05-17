@@ -1,6 +1,6 @@
 /*
-    * multitool++
-    * main.cpp
+    * multitool++ - a command line utility for various purposes
+    * Author: benja2998@noreply.codeberg.org
 */
 #include <iostream>
 #include <string>
@@ -185,7 +185,8 @@ void read() {
     /* Removed  this line below since it looks bad. */
     //std::cout << ansi::CYAN << "Validating choice... " << ansi::RESET;
 
-    /* This is the least efficient way to do it, but i don't want to use things like ncurses. */
+    /* Horrific, janky W/S navigation. I should have used ncurses instead of writing this garbage. */
+    /* But it works... */
     if (check == 'w' || check == 'W') {
         if (checked2 == "[x]") {
             checked2 = "[ ]";
