@@ -30,7 +30,7 @@ jobs:
         cd .. # Go back to repository root, to prevent the next step failing
 
     - name: Upload binaries as action artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v2
       with:
         name: pre-compiled binaries
         path: build
