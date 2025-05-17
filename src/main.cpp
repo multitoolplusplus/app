@@ -135,6 +135,10 @@ void option_telegram() {
 }
 
 void option_password() {
+
+    /* Use a seed */
+    srand(time(NULL));
+
     std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
     std::cout << ansi::CYAN << "Enter password length: " << ansi::RESET;
     std::string length;
@@ -155,7 +159,7 @@ void option_password() {
     }
     std::string password = "";
     for (int i = 0; i < length_int; i++) {
-        const std::string charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?";
+        const std::string charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?~/";
         password += charset[rand() % charset.length()];
     }
     std::cout << ansi::GREEN << "Generated password: " << ansi::RESET << password << "\n";
