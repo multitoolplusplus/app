@@ -8,6 +8,7 @@
 #include <string>
 #include <cstdlib>
 #include <thread>
+#include <vector>
 #include "discord.hpp"
 #include "telegram.hpp"
 #include "console.hpp"
@@ -36,16 +37,14 @@
     * ansi::[...] - ANSI ESCAPE CODES FOR COLORING
     * If you're reading this section, you may want to make a pull request to expand it
 */
+std::vector<std::string> check_Vector = {"[x]","[]","[]","[]","[]","[]" };
 
-std::string checked1 = "[x]";
-std::string checked2 = "[ ]";
-std::string checked3 = "[ ]";
-std::string checked4 = "[ ]";
-std::string checked5 = "[ ]";
-std::string checked6 = "[ ]";
+int check_Vector_Size = check_Vector.size();
+int check_ID = 0;
+
 
 void initialize();
-
+// This is Banner function is made to draw the banner when you run the code 
 void banner() {
     /* Using raw string literals for multiline strings. */
     const char* banner = R"(
@@ -175,12 +174,18 @@ void menu() {
     std::cout << "OPTIONS:                    \n";
     std::cout << ansi::RESET;
     std::cout << ansi::UNDERLINE << ansi::BG_BLUE << ansi::CYAN;
-    std::cout << checked1 << " exit                    \n";
+    std::cout << check_Vector[0] << " exit                    \n";
+    std::cout << check_Vector[1] << " timer                   \n";
+    std::cout << check_Vector[2] << " send Discord message    \n";
+    std::cout << check_Vector[3] << " send Telegram message   \n";
+    std::cout << check_Vector[4] << " generate secure password\n";
+    std::cout << check_Vector[5] << " calculator shell        \n";
+    /*std::cout << checked1 << " exit                    \n";
     std::cout << checked2 << " timer                   \n";
     std::cout << checked3 << " send Discord message    \n";
     std::cout << checked4 << " send Telegram message   \n"; 
     std::cout << checked5 << " generate secure password\n";
-    std::cout << checked6 << " calculator shell        \n";
+    std::cout << checked6 << " calculator shell        \n";*/
     std::cout << "\n";
     std::cout << ansi::RESET;
     std::cout << ansi::CYAN << "Use W/S to navigate, E to select.\n" << ansi::RESET;
@@ -193,75 +198,66 @@ void read() {
 
     /* Horrific, janky W/S navigation. I should have used ncurses instead of writing this garbage. */
     /* But it works... */
-    if (check == 'w' || check == 'W') {
-        if (checked2 == "[x]") {
-            checked2 = "[ ]";
-            checked1 = "[x]";
-        }
-        else if (checked3 == "[x]") {
-            checked3 = "[ ]";
-            checked2 = "[x]";
-        }
-        else if (checked4 == "[x]") {
-            checked4 = "[ ]";
-            checked3 = "[x]";
-        }
-        else if (checked5 == "[x]") {
-            checked5 = "[ ]";
-            checked4 = "[x]";
-        }
-        else if (checked6 == "[x]") {
-            checked6 = "[ ]";
-            checked5 = "[x]";
-        }
+    if (check == 'w' || check == 'W') {  
+
+        check_ID = check_ID > 0 ? check_ID - 1 : check_ID + 0;
+        for (int i = 0; i < check_Vector_Size; i++)
+        {
+            if (i == check_ID)
+            {
+                check_Vector[i] = "[x]";
+            }
+            else
+            {
+                check_Vector[i] = "[]";
+            }
+        }        
+
         initialize();
     }
     else if (check == 's' || check == 'S') {
-        if (checked1 == "[x]") {
-            checked1 = "[ ]";
-            checked2 = "[x]";
-        }
-        else if (checked2 == "[x]") {
-            checked2 = "[ ]";
-            checked3 = "[x]";
-        }
-        else if (checked3 == "[x]") {
-            checked3 = "[ ]";
-            checked4 = "[x]";
-        }
-        else if (checked4 == "[x]") {
-            checked4 = "[ ]";
-            checked5 = "[x]";
-        }
-        else if (checked5 == "[x]") {
-            checked5 = "[ ]";
-            checked6 = "[x]";
-        }
+ 
+        check_ID = check_ID < 5 ? check_ID + 1 : check_ID;
+        for (int i = 0; i < check_Vector_Size; i++)
+        {
+            if (i == check_ID)
+            {
+                check_Vector[i] = "[x]";
+            }
+            else
+            {
+                check_Vector[i] = "[]";
+            }
+        }        
+
         initialize();
     }
     else if (check == 'e' || check == 'E') {
-        if (checked1 == "[x]") {
+        switch (check_ID)
+        {
+        case 0:
             option_exit();
-        }
-        else if (checked2 == "[x]") {
+            break;
+        case 1:
             option_timer();
-        }
-        else if (checked3 == "[x]") {
+            break;
+        case 2:
             option_discord();
-        }
-        else if (checked4 == "[x]") {
+            break;
+        case 3:
             option_telegram();
-        }
-        else if (checked5 == "[x]") {
+            break;
+        case 4:
             option_password();
-        }
-        else if (checked6 == "[x]") {
+            break;
+        case 5:
             std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
             std::cout << ansi::BOLD << ansi::ITALIC << ansi::CYAN << "Welcome to the calculator shell, type 'help' for commands.\n" << ansi::RESET;
             option_shell();
-            initialize(); /* Workaround for not being able to call initialize() in the header file. 
-                * Since option_shell() runs in the same thread, initialize() will only run after the user exits the calculator shell.
-            */
+            initialize();
+            break;
+        default:
+            break;
         }
     }
     else {
