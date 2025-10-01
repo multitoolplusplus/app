@@ -14,7 +14,7 @@ We have a wiki where you can find everything you need, like instructions to buil
 
 If you want a quick guide do:
 - Install [CMake](https://cmake.org/download/)
-- Get the latest [release](https://codeberg.org/multitoolplusplus/multitoolplusplus/releases)
+- Get the latest [release](https://github.com/multitoolplusplus/app/releases)
 - Extract the archive
 - On Windows:
   - Install [Visual Studio](https://visualstudio.microsoft.com/downloads/)
