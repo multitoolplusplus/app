@@ -1,18 +1,12 @@
-#include <cstdlib>
-
 #ifndef CONSOLE_HPP
 #define CONSOLE_HPP
+#include <iostream>
+
 namespace console {
     inline void clear() {
-#ifdef _WIN32
-        system("cls");
-#elif defined(__linux__)
-        system("clear");
-#else
-        #include <iostream>
-        std::cout << "Unsupported OS. Please make sure you have modified the source code before compiling for another OS.\n";
-        exit(10);
-#endif
+        // ANSI escape sequence to clear screen and reset cursor
+        std::cout << "\x1B[2J\x1B[H" << std::flush;
     }
 }
+
 #endif

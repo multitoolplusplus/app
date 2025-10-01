@@ -1,6 +1,6 @@
 /*
     * multitool++ - a command line utility for various purposes
-    * Author: benja2998@noreply.codeberg.org
+    * Author: benja2998@duck.com
     * License: GPL-3.0
     * That means you must make any software that uses this source code GPL-3.0 licensed.
 */
@@ -37,7 +37,7 @@
     * ansi::[...] - ANSI ESCAPE CODES FOR COLORING
     * If you're reading this section, you may want to make a pull request to expand it
 */
-std::vector<std::string> check_Vector = {"[x]","[]","[]","[]","[]","[]" };
+std::vector<std::string> check_Vector = {"[x]","[ ]","[ ]","[ ]","[ ]","[ ]" };
 
 int check_Vector_Size = check_Vector.size();
 int check_ID = 0;
@@ -193,11 +193,6 @@ void menu() {
 
 void read() {
     char check = char_utils::get_char();
-    /* Removed  this line below since it looks bad. */
-    //std::cout << ansi::CYAN << "Validating choice... " << ansi::RESET;
-
-    /* Horrific, janky W/S navigation. I should have used ncurses instead of writing this garbage. */
-    /* But it works... */
     if (check == 'w' || check == 'W') {  
 
         check_ID = check_ID > 0 ? check_ID - 1 : check_ID + 0;
@@ -209,7 +204,7 @@ void read() {
             }
             else
             {
-                check_Vector[i] = "[]";
+                check_Vector[i] = "[ ]";
             }
         }        
 
@@ -226,7 +221,7 @@ void read() {
             }
             else
             {
-                check_Vector[i] = "[]";
+                check_Vector[i] = "[ ]";
             }
         }        
 
@@ -267,7 +262,6 @@ void read() {
     }
 }
 
-/* Probably the most useful function in the program. */
 /* Helps a lot for returning to the main menu. */
 void initialize() {
     console::clear();
@@ -279,7 +273,6 @@ void checkCurlIsInstalled() {
 #ifdef _WIN32
     int curl = system("curl --version >nul 2>&1");
     if (curl != 0) {
-        /* Either the user is not intelligent life and removed curl.exe or they are running an old version of Windows. */
         std::cout << "Curl not installed. Install it by running: winget install cURL.cURL\n";
         exit(1);
     }
