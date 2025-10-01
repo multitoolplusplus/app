@@ -10,7 +10,7 @@
 
 ---
 
-We have a wiki where you can find everything you need, like instructions to build the software! Check it out [here](https://multitoolplusplus.codeberg.page/wiki).
+We have a wiki where you can find everything you need, like instructions to build the software! Check it out [here](https://multitoolplusplus.github.io/wiki).
 
 If you want a quick guide do:
 - Install [CMake](https://cmake.org/download/)
