@@ -248,7 +248,7 @@ void checkCurlIsInstalled() {
 #elif defined(__linux__)
 	int curl = system("curl --version >/dev/null 2>&1");
 	if (curl != 0) {
-		std::cout << "Curl not installed. Install it by running: sudo <your package manager> install curl\n";
+		std::cout << "Curl not installed. As a Linux user, you are expected to know how to install it.\n";
 		exit(1);
 	}
 #else
