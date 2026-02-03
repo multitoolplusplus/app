@@ -1,9 +1,3 @@
-/*
- * multitool++ - a command line utility for various purposes
- * Author: benja2998@duck.com
- * License: GPL-3.0
- * That means you must make any software that uses this source code GPL-3.0 licensed.
- */
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -31,233 +25,233 @@ int check_ID = 0;
 
 void initialize();
 void banner() {
-	/* Using raw string literals for multiline strings. */
-	const char* banner = R"(
+  /* Using raw string literals for multiline strings. */
+  const char* banner = R"(
               .__   __  .__  __                .__                           
   _____  __ __|  |_/  |_|__|/  |_  ____   ____ |  |      .__         .__     )";
 
-	const char* banner2 = R"(
+  const char* banner2 = R"(
  /     \|  |  \  |\   __\  \   __\/  _ \ /  _ \|  |    __|  |___   __|  |___ 
 |  Y Y  \  |  /  |_|  | |  ||  | (  <_> |  <_> )  |__ /__    __/  /__    __/ )";
 
-	const char* banner3 = R"(
+  const char* banner3 = R"(
 |__|_|  /____/|____/__| |__||__|  \____/ \____/|____/    |__|        |__|    
       \/                                                                     )";
 
-	/* Print using ansi color codes for a fade effect from white to blue. */
-	std::cout << ansi::BG_BLACK;
-	std::cout << ansi::BOLD << ansi::WHITE << banner << ansi::RESET;
-	std::cout << ansi::BG_BLACK;
-	std::cout << ansi::BOLD << ansi::CYAN << banner2 << ansi::RESET;
-	std::cout << ansi::BG_BLACK;
-	std::cout << ansi::BOLD << ansi::BLUE << banner3 << ansi::RESET << "\n" <<  "\n";
+  /* Print using ansi color codes for a fade effect from white to blue. */
+  std::cout << ansi::BG_BLACK;
+  std::cout << ansi::BOLD << ansi::WHITE << banner << ansi::RESET;
+  std::cout << ansi::BG_BLACK;
+  std::cout << ansi::BOLD << ansi::CYAN << banner2 << ansi::RESET;
+  std::cout << ansi::BG_BLACK;
+  std::cout << ansi::BOLD << ansi::BLUE << banner3 << ansi::RESET << "\n" <<  "\n";
 }
 
 void option_exit() {
-	std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
-	exit(0);
+  std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+  exit(0);
 }
 
 void option_timer() {
-	std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
-	std::cout << ansi::CYAN << "Enter a number of seconds: " << ansi::RESET;
-	std::string seconds;
-	std::getline(std::cin, seconds);
-	int seconds_int;
-	try {
-		seconds_int = std::stoi(seconds);
-	}
-	catch (std::invalid_argument& e) {
-		std::cerr << ansi::RED << e.what() << ansi::RESET << "\n";
-		std::this_thread::sleep_for(std::chrono::seconds(1));
-		initialize();
-	}
-	catch (std::out_of_range& e) {
-		std::cerr << ansi::RED << e.what() << ansi::RESET << "\n";
-		std::this_thread::sleep_for(std::chrono::seconds(1));
-		initialize();
-	}
-	int timer = seconds_int;
-	while (timer > 0) {
-		std::cout << ansi::WHITE << timer << ansi::RESET << "\n";
-		std::this_thread::sleep_for(std::chrono::seconds(1));
-		timer--;
-	}
-	initialize();
+  std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+  std::cout << ansi::CYAN << "Enter a number of seconds: " << ansi::RESET;
+  std::string seconds;
+  std::getline(std::cin, seconds);
+  int seconds_int;
+  try {
+    seconds_int = std::stoi(seconds);
+  }
+  catch (std::invalid_argument& e) {
+    std::cerr << ansi::RED << e.what() << ansi::RESET << "\n";
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    initialize();
+  }
+  catch (std::out_of_range& e) {
+    std::cerr << ansi::RED << e.what() << ansi::RESET << "\n";
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    initialize();
+  }
+  int timer = seconds_int;
+  while (timer > 0) {
+    std::cout << ansi::WHITE << timer << ansi::RESET << "\n";
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    timer--;
+  }
+  initialize();
 }
 
 void option_discord() {
-	std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
-	std::cout << ansi::CYAN << "Enter Discord webhook URL: " << ansi::RESET;
-	std::string webhook_url;
-	std::getline(std::cin, webhook_url);
+  std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+  std::cout << ansi::CYAN << "Enter Discord webhook URL: " << ansi::RESET;
+  std::string webhook_url;
+  std::getline(std::cin, webhook_url);
 
-	std::cout << ansi::CYAN << "Enter message to send: " << ansi::RESET;
-	std::string message;
-	std::getline(std::cin, message);
+  std::cout << ansi::CYAN << "Enter message to send: " << ansi::RESET;
+  std::string message;
+  std::getline(std::cin, message);
 
-	discord::send_webhook(webhook_url, message);
-	initialize();
+  discord::send_webhook(webhook_url, message);
+  initialize();
 }
 
 void option_telegram() {
-	std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
-	std::cout << ansi::CYAN << "Enter Telegram bot token: " << ansi::RESET;
-	std::string bot_token;
-	std::getline(std::cin, bot_token);
+  std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+  std::cout << ansi::CYAN << "Enter Telegram bot token: " << ansi::RESET;
+  std::string bot_token;
+  std::getline(std::cin, bot_token);
 
-	std::cout << ansi::CYAN << "Enter Telegram chat ID: " << ansi::RESET;
-	std::string chat_id;
-	std::getline(std::cin, chat_id);
+  std::cout << ansi::CYAN << "Enter Telegram chat ID: " << ansi::RESET;
+  std::string chat_id;
+  std::getline(std::cin, chat_id);
 
-	std::cout << ansi::CYAN << "Enter message to send: " << ansi::RESET;
-	std::string message;
-	std::getline(std::cin, message);
+  std::cout << ansi::CYAN << "Enter message to send: " << ansi::RESET;
+  std::string message;
+  std::getline(std::cin, message);
 
-	telegram::send_message(bot_token, chat_id, message);
-	initialize();
+  telegram::send_message(bot_token, chat_id, message);
+  initialize();
 }
 
 #ifdef __linux__
 void option_password() {
-	std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
-	std::cout << ansi::GREEN << "Generated password: " << ansi::RESET << "\n";
-	int success = system("head -c 1000 /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 32; echo"); // More secure than using a timestamp seed
-	std::cout << ansi::CYAN << "Press any key to continue...\n" << ansi::RESET;
-	char_utils::get_char();
-	initialize();
+  std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+  std::cout << ansi::GREEN << "Generated password: " << ansi::RESET << "\n";
+  int success = system("head -c 1000 /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 32; echo"); // More secure than using a timestamp seed
+  std::cout << ansi::CYAN << "Press any key to continue...\n" << ansi::RESET;
+  char_utils::get_char();
+  initialize();
 }
 #endif
 
 void menu() {
-	console::clear();
-	banner();
-	std::cout << ansi::BOLD << ansi::ITALIC << ansi::UNDERLINE << ansi::BG_BLUE << ansi::CYAN;
-	std::cout << "OPTIONS:                    \n";
-	std::cout << ansi::RESET;
-	std::cout << ansi::UNDERLINE << ansi::BG_BLUE << ansi::CYAN;
-	std::cout << check_Vector[0] << " exit                    \n";
-	std::cout << check_Vector[1] << " timer                   \n";
-	std::cout << check_Vector[2] << " send Discord message    \n";
-	std::cout << check_Vector[3] << " send Telegram message   \n";
+  console::clear();
+  banner();
+  std::cout << ansi::BOLD << ansi::ITALIC << ansi::UNDERLINE << ansi::BG_BLUE << ansi::CYAN;
+  std::cout << "OPTIONS:                    \n";
+  std::cout << ansi::RESET;
+  std::cout << ansi::UNDERLINE << ansi::BG_BLUE << ansi::CYAN;
+  std::cout << check_Vector[0] << " exit                    \n";
+  std::cout << check_Vector[1] << " timer                   \n";
+  std::cout << check_Vector[2] << " send Discord message    \n";
+  std::cout << check_Vector[3] << " send Telegram message   \n";
 #ifdef __linux__
-	std::cout << check_Vector[4] << " generate secure password\n";
-	std::cout << check_Vector[5] << " calculator shell        \n";
+  std::cout << check_Vector[4] << " generate secure password\n";
+  std::cout << check_Vector[5] << " calculator shell        \n";
 #elif defined(_WIN32)
-	std::cout << check_Vector[4] << " calculator shell        \n";
+  std::cout << check_Vector[4] << " calculator shell        \n";
 #endif
-	std::cout << "\n";
-	std::cout << ansi::RESET;
-	std::cout << ansi::CYAN << "Use W/S to navigate, E to select.\n" << ansi::RESET;
+  std::cout << "\n";
+  std::cout << ansi::RESET;
+  std::cout << ansi::CYAN << "Use W/S to navigate, E to select.\n" << ansi::RESET;
 }
 
 void read() {
-	char check = char_utils::get_char();
-	if (check == 'w' || check == 'W') {  
+  char check = char_utils::get_char();
+  if (check == 'w' || check == 'W') {  
 
-		check_ID = check_ID > 0 ? check_ID - 1 : check_ID + 0;
-		for (int i = 0; i < check_Vector_Size; i++)
-		{
-			if (i == check_ID)
-			{
-				check_Vector[i] = "[x]";
-			}
-			else
-			{
-				check_Vector[i] = "[ ]";
-			}
-		}        
+    check_ID = check_ID > 0 ? check_ID - 1 : check_ID + 0;
+    for (int i = 0; i < check_Vector_Size; i++)
+      {
+	if (i == check_ID)
+	  {
+	    check_Vector[i] = "[x]";
+	  }
+	else
+	  {
+	    check_Vector[i] = "[ ]";
+	  }
+      }        
 
-		initialize();
-	}
-	else if (check == 's' || check == 'S') {
+    initialize();
+  }
+  else if (check == 's' || check == 'S') {
 
-		check_ID = check_ID < 5 ? check_ID + 1 : check_ID;
-		for (int i = 0; i < check_Vector_Size; i++)
-		{
-			if (i == check_ID)
-			{
-				check_Vector[i] = "[x]";
-			}
-			else
-			{
-				check_Vector[i] = "[ ]";
-			}
-		}        
+    check_ID = check_ID < 5 ? check_ID + 1 : check_ID;
+    for (int i = 0; i < check_Vector_Size; i++)
+      {
+	if (i == check_ID)
+	  {
+	    check_Vector[i] = "[x]";
+	  }
+	else
+	  {
+	    check_Vector[i] = "[ ]";
+	  }
+      }        
 
-		initialize();
-	}
-	else if (check == 'e' || check == 'E') {
-		switch (check_ID)
-		{
-			case 0:
-				option_exit();
-				break;
-			case 1:
-				option_timer();
-				break;
-			case 2:
-				option_discord();
-				break;
-			case 3:
-				option_telegram();
-				break;
+    initialize();
+  }
+  else if (check == 'e' || check == 'E') {
+    switch (check_ID)
+      {
+      case 0:
+	option_exit();
+	break;
+      case 1:
+	option_timer();
+	break;
+      case 2:
+	option_discord();
+	break;
+      case 3:
+	option_telegram();
+	break;
 #ifdef __linux__
-			case 4:
-				option_password();
-				break;
-			case 5:
-				std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
-				std::cout << ansi::BOLD << ansi::ITALIC << ansi::CYAN << "Welcome to the calculator shell, type 'help' for commands.\n" << ansi::RESET;
-				option_shell();
-				initialize();
-				break;
+      case 4:
+	option_password();
+	break;
+      case 5:
+	std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+	std::cout << ansi::BOLD << ansi::ITALIC << ansi::CYAN << "Welcome to the calculator shell, type 'help' for commands.\n" << ansi::RESET;
+	option_shell();
+	initialize();
+	break;
 #elif defined(_WIN32)
-			case 4:
-				std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
-				std::cout << ansi::BOLD << ansi::ITALIC << ansi::CYAN << "Welcome to the calculator shell, type 'help' for commands.\n" << ansi::RESET;
-				option_shell();
-				initialize();
-				break;
+      case 4:
+	std::cout << ansi::GREEN << "Valid choice!" << ansi::RESET << "\n";
+	std::cout << ansi::BOLD << ansi::ITALIC << ansi::CYAN << "Welcome to the calculator shell, type 'help' for commands.\n" << ansi::RESET;
+	option_shell();
+	initialize();
+	break;
 #endif
-			default:
-				break;
-		}
-	}
-	else {
-		std::cerr << ansi::RED << "Invalid choice." << ansi::RESET << "\n";
-		std::this_thread::sleep_for(std::chrono::seconds(1));
-		initialize();
-	}
+      default:
+	break;
+      }
+  }
+  else {
+    std::cerr << ansi::RED << "Invalid choice." << ansi::RESET << "\n";
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    initialize();
+  }
 }
 
 /* Helps a lot for returning to the main menu. */
 void initialize() {
-	console::clear();
-	menu();
-	read();
+  console::clear();
+  menu();
+  read();
 }
 
 void checkCurlIsInstalled() {
 #ifdef _WIN32
-	int curl = system("curl --version >nul 2>&1");
-	if (curl != 0) {
-		std::cout << "Curl not installed. Install it by running: winget install cURL.cURL\n";
-		exit(1);
-	}
+  int curl = system("curl --version >nul 2>&1");
+  if (curl != 0) {
+    std::cout << "Curl not installed. Install it by running: winget install cURL.cURL\n";
+    exit(1);
+  }
 #elif defined(__linux__)
-	int curl = system("curl --version >/dev/null 2>&1");
-	if (curl != 0) {
-		std::cout << "Curl not installed. As a Linux user, you are expected to know how to install it.\n";
-		exit(1);
-	}
+  int curl = system("curl --version >/dev/null 2>&1");
+  if (curl != 0) {
+    std::cout << "Curl not installed. As a Linux user, you are expected to know how to install it.\n";
+    exit(1);
+  }
 #else
-	std::cout << "Unsupported OS. Please make sure you have modified the source code before compiling for another OS.";
-	exit(10);
+  std::cout << "Unsupported OS. Please make sure you have modified the source code before compiling for another OS.";
+  exit(10);
 #endif
 }
 
 int main() {
-	checkCurlIsInstalled();
-	initialize();
+  checkCurlIsInstalled();
+  initialize();
 }
