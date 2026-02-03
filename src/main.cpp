@@ -12,7 +12,7 @@
 #ifdef _WIN32
 #include <windows.h>
 #include <conio.h>
-#elif defined(__linux__)
+#else
 #include <unistd.h>
 #include <termios.h>
 #endif
@@ -239,15 +239,12 @@ void checkCurlIsInstalled() {
     std::cout << "Curl not installed. Install it by running: winget install cURL.cURL\n";
     exit(1);
   }
-#elif defined(__linux__)
+#else
   int curl = system("curl --version >/dev/null 2>&1");
   if (curl != 0) {
     std::cout << "Curl not installed. As a Linux user, you are expected to know how to install it.\n";
     exit(1);
   }
-#else
-  std::cout << "Unsupported OS. Please make sure you have modified the source code before compiling for another OS.";
-  exit(10);
 #endif
 }
 

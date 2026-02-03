@@ -1,7 +1,7 @@
 #ifdef _WIN32
 #include <windows.h>
 #include <conio.h>
-#elif defined(__linux__)
+#else
 #include <unistd.h>
 #include <termios.h>
 #endif
@@ -12,7 +12,7 @@ namespace char_utils {
   inline char get_char() {
 #ifdef _WIN32
     return _getch();
-#elif defined(__linux__)
+#else
     struct termios oldt, newt;
     char ch;
     tcgetattr(STDIN_FILENO, &oldt);
@@ -22,8 +22,6 @@ namespace char_utils {
     ch = getchar();
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
     return ch;
-#else
-    return '\0';
 #endif
   }
 }
