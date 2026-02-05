@@ -9,10 +9,10 @@
 #define CALCULATOR_SHELL_HPP
 inline void option_shell() {
   std::string command;
-  std::cout << ansi::CYAN << ">> " << ansi::RESET << ansi::GREEN;
+  std::cout << ansi::BRIGHT_CYAN << ">> " << ansi::RESET << ansi::BRIGHT_GREEN;
   std::getline(std::cin, command);
   if (command == "help") {
-    std::cout << ansi::BOLD << ansi::ITALIC << ansi::CYAN;
+    std::cout << ansi::BOLD << ansi::ITALIC << ansi::BRIGHT_CYAN;
     std::cout << "Commands:\n";
     std::cout << "help - show this help message\n";
     std::cout << "exit - exit the shell\n";
@@ -31,7 +31,7 @@ inline void option_shell() {
     option_shell();
   }
   else if (command == "sub") {
-    std::cout << ansi::CYAN << "Enter first number: " << ansi::RESET;
+    std::cout << ansi::BRIGHT_CYAN << "Enter first number: " << ansi::BRIGHT_WHITE;
     std::string num1;
     std::getline(std::cin, num1);
     int num1_int;
@@ -39,16 +39,16 @@ inline void option_shell() {
       num1_int = std::stoi(num1);
     }
     catch (std::invalid_argument& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
       std::this_thread::sleep_for(std::chrono::seconds(1));
       option_shell();
     }
     catch (std::out_of_range& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
       std::this_thread::sleep_for(std::chrono::seconds(1));
       option_shell();
     }
-    std::cout << ansi::CYAN << "Enter second number: " << ansi::RESET;
+    std::cout << ansi::BRIGHT_CYAN << "Enter second number: " << ansi::BRIGHT_WHITE;
     std::string num2;
     std::getline(std::cin, num2);
     int num2_int;
@@ -56,18 +56,18 @@ inline void option_shell() {
       num2_int = std::stoi(num2);
     }
     catch (std::invalid_argument& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
     }
     catch (std::out_of_range& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
     }
-    std::cout << ansi::GREEN << "Result: " << ansi::RESET << num1_int - num2_int << "\n";
-    std::cout << ansi::CYAN << "Press any key to continue...\n" << ansi::RESET;
+    std::cout << ansi::BRIGHT_GREEN << "Result: " << ansi::RESET << ansi::BRIGHT_WHITE << num1_int - num2_int << "\n";
+    std::cout << ansi::BRIGHT_CYAN << "Press any key to continue...\n" << ansi::RESET;
     char_utils::get_char();
     option_shell();
   }
   else if (command == "add") {
-    std::cout << ansi::CYAN << "Enter first number: " << ansi::RESET;
+    std::cout << ansi::BRIGHT_CYAN << "Enter first number: " << ansi::BRIGHT_WHITE;
     std::string num1;
     std::getline(std::cin, num1);
     int num1_int;
@@ -75,16 +75,16 @@ inline void option_shell() {
       num1_int = std::stoi(num1);
     }
     catch (std::invalid_argument& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
       std::this_thread::sleep_for(std::chrono::seconds(1));
       option_shell();
     }
     catch (std::out_of_range& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
       std::this_thread::sleep_for(std::chrono::seconds(1));
       option_shell();
     }
-    std::cout << ansi::CYAN << "Enter second number: " << ansi::RESET;
+    std::cout << ansi::BRIGHT_CYAN << "Enter second number: " << ansi::BRIGHT_WHITE;
     std::string num2;
     std::getline(std::cin, num2);
     int num2_int;
@@ -92,18 +92,18 @@ inline void option_shell() {
       num2_int = std::stoi(num2);
     }
     catch (std::invalid_argument& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
     }
     catch (std::out_of_range& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
     }
-    std::cout << ansi::GREEN << "Result: " << ansi::RESET << num1_int + num2_int << "\n";
-    std::cout << ansi::CYAN << "Press any key to continue...\n" << ansi::RESET;
+    std::cout << ansi::BRIGHT_GREEN << "Result: " << ansi::RESET << ansi::BRIGHT_WHITE << num1_int + num2_int << "\n";
+    std::cout << ansi::BRIGHT_CYAN << "Press any key to continue...\n" << ansi::RESET;
     char_utils::get_char();
     option_shell();
   }
   else if (command == "mul") {
-    std::cout << ansi::CYAN << "Enter first number: " << ansi::RESET;
+    std::cout << ansi::BRIGHT_CYAN << "Enter first number: " << ansi::BRIGHT_WHITE;
     std::string num1;
     std::getline(std::cin, num1);
     int num1_int;
@@ -111,16 +111,16 @@ inline void option_shell() {
       num1_int = std::stoi(num1);
     }
     catch (std::invalid_argument& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
       std::this_thread::sleep_for(std::chrono::seconds(1));
       option_shell();
     }
     catch (std::out_of_range& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
       std::this_thread::sleep_for(std::chrono::seconds(1));
       option_shell();
     }
-    std::cout << ansi::CYAN << "Enter second number: " << ansi::RESET;
+    std::cout << ansi::BRIGHT_CYAN << "Enter second number: " << ansi::BRIGHT_WHITE;
     std::string num2;
     std::getline(std::cin, num2);
     int num2_int;
@@ -128,18 +128,18 @@ inline void option_shell() {
       num2_int = std::stoi(num2);
     }
     catch (std::invalid_argument& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
     }
     catch (std::out_of_range& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
     }
-    std::cout << ansi::GREEN << "Result: " << ansi::RESET << num1_int * num2_int << "\n";
-    std::cout << ansi::CYAN << "Press any key to continue...\n" << ansi::RESET;
+    std::cout << ansi::BRIGHT_GREEN << "Result: " << ansi::RESET << ansi::BRIGHT_WHITE << num1_int * num2_int << "\n";
+    std::cout << ansi::BRIGHT_CYAN << "Press any key to continue...\n" << ansi::RESET;
     char_utils::get_char();
     option_shell();
   }
   else if (command == "div") {
-    std::cout << ansi::CYAN << "Enter first number: " << ansi::RESET;
+    std::cout << ansi::BRIGHT_CYAN << "Enter first number: " << ansi::BRIGHT_WHITE;
     std::string num1;
     std::getline(std::cin, num1);
     int num1_int;
@@ -147,16 +147,16 @@ inline void option_shell() {
       num1_int = std::stoi(num1);
     }
     catch (std::invalid_argument& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
       std::this_thread::sleep_for(std::chrono::seconds(1));
       option_shell();
     }
     catch (std::out_of_range& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
       std::this_thread::sleep_for(std::chrono::seconds(1));
       option_shell();
     }
-    std::cout << ansi::CYAN << "Enter second number: " << ansi::RESET;
+    std::cout << ansi::BRIGHT_CYAN << "Enter second number: " << ansi::BRIGHT_WHITE;
     std::string num2;
     std::getline(std::cin, num2);
     int num2_int;
@@ -164,13 +164,13 @@ inline void option_shell() {
       num2_int = std::stoi(num2);
     }
     catch (std::invalid_argument& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
     }
     catch (std::out_of_range& e) {
-      std::cout << ansi::RED << e.what() << ansi::RESET << "\n";
+      std::cout << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
     }
-    std::cout << ansi::GREEN << "Result: " << ansi::RESET << num1_int / num2_int << "\n";
-    std::cout << ansi::CYAN << "Press any key to continue...\n" << ansi::RESET;
+    std::cout << ansi::BRIGHT_GREEN << "Result: " << ansi::RESET << ansi::BRIGHT_WHITE << num1_int / num2_int << "\n";
+    std::cout << ansi::BRIGHT_CYAN << "Press any key to continue...\n" << ansi::RESET;
     char_utils::get_char();
     option_shell();
   }

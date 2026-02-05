@@ -58,7 +58,7 @@ void option_exit() {
 
 void option_timer() {
   std::cout << ansi::BRIGHT_GREEN << "Valid choice!" << ansi::RESET << "\n";
-  std::cout << ansi::BRIGHT_CYAN << "Enter a number of seconds: " << ansi::RESET;
+  std::cout << ansi::BRIGHT_CYAN << "Enter a number of seconds: " << ansi::BRIGHT_WHITE;
   std::string seconds;
   std::getline(std::cin, seconds);
   int seconds_int;
@@ -86,11 +86,11 @@ void option_timer() {
 
 void option_discord() {
   std::cout << ansi::BRIGHT_GREEN << "Valid choice!" << ansi::RESET << "\n";
-  std::cout << ansi::BRIGHT_CYAN << "Enter Discord webhook URL: " << ansi::RESET;
+  std::cout << ansi::BRIGHT_CYAN << "Enter Discord webhook URL: " << ansi::BRIGHT_WHITE;
   std::string webhook_url;
   std::getline(std::cin, webhook_url);
 
-  std::cout << ansi::BRIGHT_CYAN << "Enter message to send: " << ansi::RESET;
+  std::cout << ansi::BRIGHT_CYAN << "Enter message to send: " << ansi::BRIGHT_WHITE;
   std::string message;
   std::getline(std::cin, message);
 
@@ -100,15 +100,15 @@ void option_discord() {
 
 void option_telegram() {
   std::cout << ansi::BRIGHT_GREEN << "Valid choice!" << ansi::RESET << "\n";
-  std::cout << ansi::BRIGHT_CYAN << "Enter Telegram bot token: " << ansi::RESET;
+  std::cout << ansi::BRIGHT_CYAN << "Enter Telegram bot token: " << ansi::BRIGHT_WHITE;
   std::string bot_token;
   std::getline(std::cin, bot_token);
 
-  std::cout << ansi::BRIGHT_CYAN << "Enter Telegram chat ID: " << ansi::RESET;
+  std::cout << ansi::BRIGHT_CYAN << "Enter Telegram chat ID: " << ansi::BRIGHT_WHITE;
   std::string chat_id;
   std::getline(std::cin, chat_id);
 
-  std::cout << ansi::BRIGHT_CYAN << "Enter message to send: " << ansi::RESET;
+  std::cout << ansi::BRIGHT_CYAN << "Enter message to send: " << ansi::BRIGHT_WHITE;
   std::string message;
   std::getline(std::cin, message);
 
@@ -119,7 +119,7 @@ void option_telegram() {
 #ifdef PLATFORM_POSIX
 void option_password() {
   std::cout << ansi::BRIGHT_GREEN << "Valid choice!" << ansi::RESET << "\n";
-  std::cout << ansi::BRIGHT_GREEN << "Generated password: " << ansi::RESET << "\n";
+  std::cout << ansi::BRIGHT_GREEN << "Generated password: " << ansi::BRIGHT_WHITE << "\n";
   int success = system("head -c 1000 /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 32; echo"); // More secure than using a timestamp seed
   std::cout << ansi::BRIGHT_CYAN << "Press any key to continue...\n" << ansi::RESET;
   char_utils::get_char();
