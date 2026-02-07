@@ -53,6 +53,7 @@ void banner() {
 
 void option_exit() {
   std::cout << ansi::BRIGHT_GREEN << "Valid choice!" << ansi::RESET << "\n";
+  console::leave_alt();
   exit(0);
 }
 
@@ -257,5 +258,7 @@ void checkCurlIsInstalled() {
 
 int main() {
   checkCurlIsInstalled();
+  console::enter_alt();
   initialize();
+  console::leave_alt();
 }
