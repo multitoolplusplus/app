@@ -1,3 +1,4 @@
+#include <curl/curl.h>
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -237,27 +238,7 @@ void initialize() {
   read();
 }
 
-void checkCurlIsInstalled() {
-#ifdef PLATFORM_WINDOWS
-  int curl = system("curl --version >nul 2>&1");
-  if (curl != 0) {
-    std::cout << "Curl not installed. Install it by running: winget install cURL.cURL\n";
-    exit(1);
-  }
-#elif defined(PLATFORM_POSIX)
-  int curl = system("curl --version >/dev/null 2>&1");
-  if (curl != 0) {
-    std::cout << "Curl not installed.\n";
-    exit(1);
-  }
-#else
-  std::cout << "No.\n";
-  exit(1);
-#endif
-}
-
 int main() {
-  checkCurlIsInstalled();
   console::enter_alt();
   initialize();
   console::leave_alt();
