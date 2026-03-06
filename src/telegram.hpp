@@ -3,6 +3,7 @@
 #include <string>
 #include <thread>
 #include "ansi.hpp"
+#include "char.hpp"
 
 #ifndef TELEGRAM_HPP
 #define TELEGRAM_HPP
@@ -14,9 +15,17 @@ namespace telegram {
 
         if (curl) {
             CURLcode result;
-            curl_easy_setopt(curl, CURLOPT_URL, url);
+            std::string json_data = "{\"chat_id\": \"" + chat_id + "\",\"text\": \"" + message + "\"}";
+            curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+            curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json_data.c_str());
+
             result = curl_easy_perform(curl);
             curl_easy_cleanup(curl);
+            std::cout << result << std::endl;
+            char_utils::get_char();
+        } else {
+            std::cout << ansi::BRIGHT_RED << "Something happened\n" << ansi::RESET;
+            char_utils::get_char();
         }
     }
 }

@@ -5,6 +5,9 @@ project(multitool++ VERSION 1.1.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Find and link libcurl
+find_package(CURL REQUIRED)
+
 # include ./src/*.cpp
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
@@ -13,6 +16,9 @@ include_directories("src")
 
 # define executable
 add_executable(multitool++ ${SOURCES})
+
+# Link libcurl
+target_link_libraries(multitool++ PRIVATE CURL::libcurl)
 
 # enable testing
 enable_testing()
