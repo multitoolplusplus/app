@@ -14,5 +14,5 @@
   - Install CMake
   - Run `build.sh`
 
-### Screenshot (v1.3.0)
-![Screenshot v1.3.0](./assets/v1.3.0.png)
+### Screenshot (v1.5.0)
+![Screenshot v1.5.0](./assets/v1.5.0.png)
