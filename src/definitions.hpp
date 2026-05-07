@@ -3,8 +3,8 @@
 
 #if defined(__linux__) || defined(__APPLE__) || defined(__unix__) || defined(__unix)
 #define PLATFORM_POSIX
-#elif defined(_WIN32) || defined(_WIN64)
-#define PLATFORM_WINDOWS
+#else
+#error "multitool++ supports POSIX systems only. Use Linux, macOS, BSD, or WSL."
 #endif
 
 #define APP_VERSION "1.5.0"

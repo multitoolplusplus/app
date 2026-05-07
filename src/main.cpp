@@ -11,14 +11,6 @@
 #include "calculator_shell.hpp"
 #include "definitions.hpp"
 
-#ifdef PLATFORM_WINDOWS
-#include <windows.h>
-#include <conio.h>
-#else
-#include <unistd.h>
-#include <termios.h>
-#endif
-
 std::vector<std::string> check_Vector = {"[x]","[ ]","[ ]","[ ]","[ ]","[ ]" };
 
 int check_Vector_Size = check_Vector.size();
@@ -118,7 +110,6 @@ void option_telegram() {
   initialize();
 }
 
-#ifdef PLATFORM_POSIX
 void option_password() {
   std::cout << ansi::BRIGHT_GREEN << "Valid choice!" << ansi::RESET << "\n";
   std::cout << ansi::BRIGHT_GREEN << "Generated password: " << ansi::BRIGHT_WHITE << "\n";
@@ -127,7 +118,6 @@ void option_password() {
   char_utils::get_char();
   initialize();
 }
-#endif
 
 void menu() {
   console::clear();
@@ -140,12 +130,8 @@ void menu() {
   std::cout << check_Vector[1] << " timer                   \n";
   std::cout << check_Vector[2] << " send Discord message    \n";
   std::cout << check_Vector[3] << " send Telegram message   \n";
-#ifdef PLATFORM_POSIX
   std::cout << check_Vector[4] << " generate secure password\n";
   std::cout << check_Vector[5] << " calculator shell        \n";
-#elif defined(PLATFORM_WINDOWS)
-  std::cout << check_Vector[4] << " calculator shell        \n";
-#endif
   std::cout << "\n";
   std::cout << ansi::RESET;
   std::cout << ansi::BRIGHT_CYAN << "Use W/S to navigate, E to select.\n" << ansi::RESET;
@@ -202,7 +188,6 @@ void read() {
       case 3:
 	option_telegram();
 	break;
-#ifdef PLATFORM_POSIX
       case 4:
 	option_password();
 	break;
@@ -212,14 +197,6 @@ void read() {
 	option_shell();
 	initialize();
 	break;
-#elif defined(PLATFORM_WINDOWS)
-      case 4:
-	std::cout << ansi::BRIGHT_GREEN << "Valid choice!" << ansi::RESET << "\n";
-	std::cout << ansi::BOLD << ansi::ITALIC << ansi::BRIGHT_CYAN << "Welcome to the calculator shell, type 'help' for commands.\n" << ansi::RESET;
-	option_shell();
-	initialize();
-	break;
-#endif
       default:
 	break;
       }
