@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(multitool++ VERSION 1.5.0 LANGUAGES CXX)
+project(multitool++ VERSION 1.6.0 LANGUAGES CXX)
 
 if(NOT UNIX)
   message(FATAL_ERROR "multitool++ supports POSIX systems only. Use Linux, macOS, BSD, or WSL.")

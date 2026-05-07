@@ -7,6 +7,6 @@
 #error "multitool++ supports POSIX systems only. Use Linux, macOS, BSD, or WSL."
 #endif
 
-#define APP_VERSION "1.5.0"
+#define APP_VERSION "1.6.0"
 
 #endif

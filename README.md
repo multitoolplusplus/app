@@ -21,5 +21,5 @@ Native Windows builds are not supported. Use Linux, macOS, BSD, or WSL.
 - libcurl development files discoverable by CMake.
 - bc.
 
-### Screenshot (v1.5.0)
-![Screenshot v1.5.0](./assets/v1.5.0.png)
+### Screenshot (v1.6.0)
+![Screenshot v1.6.0](./assets/v1.6.0.png)
