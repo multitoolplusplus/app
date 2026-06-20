@@ -136,7 +136,7 @@ void read() {
 	}
 	else if (check == 's' || check == 'S') {
 
-		check_ID = check_ID < 5 ? check_ID + 1 : check_ID;
+		check_ID = check_ID < 4 ? check_ID + 1 : check_ID;
 		for (int i = 0; i < check_Vector_Size; i++)
 			{
 				if (i == check_ID)
