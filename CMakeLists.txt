@@ -33,4 +33,4 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # GCC/Clang optimization flags
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -pedantic -Wall -Werror")
