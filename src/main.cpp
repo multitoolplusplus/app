@@ -34,20 +34,20 @@ void option_timer() {
 	std::cout << ansi::BRIGHT_CYAN << "Enter a number of seconds: " << ansi::BRIGHT_WHITE;
 	std::string seconds;
 	std::getline(std::cin, seconds);
-	int seconds_int;
+	int seconds_int = 5; // default when not able to be initialized
 	try {
 		seconds_int = std::stoi(seconds);
 	}
-		catch (std::invalid_argument& e) {
-			std::cerr << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
-			std::this_thread::sleep_for(std::chrono::seconds(1));
-			initialize();
-		}
-		catch (std::out_of_range& e) {
-			std::cerr << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
-			std::this_thread::sleep_for(std::chrono::seconds(1));
-			initialize();
-		}
+	catch (std::invalid_argument& e) {
+		std::cerr << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+		initialize();
+	}
+	catch (std::out_of_range& e) {
+		std::cerr << ansi::BRIGHT_RED << e.what() << ansi::RESET << "\n";
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+		initialize();
+	}
 	int timer = seconds_int;
 	while (timer > 0) {
 		std::cout << ansi::BRIGHT_WHITE << timer << ansi::RESET << "\n";
@@ -92,7 +92,7 @@ void option_telegram() {
 void option_password() {
 	std::cout << ansi::BRIGHT_GREEN << "Valid choice!" << ansi::RESET << "\n";
 	std::cout << ansi::BRIGHT_GREEN << "Generated password: " << ansi::BRIGHT_WHITE << "\n";
-	int success = system("head -c 1000 /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 32; echo"); // More secure than using a timestamp seed
+	system("head -c 1000 /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 32; echo"); // More secure than using a timestamp seed
 	std::cout << ansi::BRIGHT_CYAN << "Press any key to continue...\n" << ansi::RESET;
 	char_utils::get_char();
 	initialize();
