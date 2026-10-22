@@ -104,6 +104,10 @@ void option_sysinfo() {
   std::cout << ansi::RESET;
   std::cout << "------------------\n";
 
+  /* get info */
+
+
+  /* print info */
   std::cout << ansi::BRIGHT_BLUE << "Number of processors" << ansi::RESET << ": TODO" << "\n";
   std::cout << ansi::BRIGHT_BLUE << "Available RAM" << ansi::RESET << ": TODO" << "\n";
   std::cout << ansi::BRIGHT_BLUE << "Running processes" << ansi::RESET << ": TODO" << "\n";
