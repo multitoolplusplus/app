@@ -12,5 +12,5 @@
   - Install `bc`
   - Run `build.sh`
 
-### Screenshot (v1.7.0)
-![Screenshot v1.7.0](./assets/v1.7.0.png)
+### Screenshot (v1.8.0)
+![Screenshot v1.8.0](./assets/v1.8.0.png)
