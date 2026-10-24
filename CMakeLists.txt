@@ -2,10 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 
 project(multitool++ VERSION 1.8.0 LANGUAGES CXX)
 
-if(NOT UNIX)
-  message(FATAL_ERROR "multitool++ supports POSIX systems only. Use Linux, macOS, BSD, or WSL.")
-endif()
-
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
@@ -31,6 +27,3 @@ enable_testing()
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the build type." FORCE)
 endif()
-
-# GCC/Clang optimization flags
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -pedantic -Wall -Werror")

@@ -1,8 +1,12 @@
 #include <curl/curl.h>
+#include "meminfo_parser.hpp"
+#include <sys/utsname.h>
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <unistd.h>
 #include <thread>
+#include <sys/sysinfo.h>
 #include <vector>
 #include "discord.hpp"
 #include "telegram.hpp"
@@ -106,11 +110,25 @@ void option_sysinfo() {
 
   /* get info */
 
+  long number_of_processors = sysconf(_SC_NPROCESSORS_ONLN);
+
+  mp::Meminfo mi;
+  if(!mp::meminfo_parse(mi)) {
+  }
+
+  struct sysinfo sys_info;
+  struct utsname unamei;
+
+  if (sysinfo(&sys_info) < 0) initialize();
+  if (uname(&unamei) < 0) initialize();
 
   /* print info */
-  std::cout << ansi::BRIGHT_BLUE << "Number of processors" << ansi::RESET << ": TODO" << "\n";
-  std::cout << ansi::BRIGHT_BLUE << "Available RAM" << ansi::RESET << ": TODO" << "\n";
-  std::cout << ansi::BRIGHT_BLUE << "Running processes" << ansi::RESET << ": TODO" << "\n";
+  std::cout << ansi::BRIGHT_BLUE << "Kernel version" << ansi::RESET << ": " << unamei.release << "\n";
+  std::cout << ansi::BRIGHT_BLUE << "Number of processors" << ansi::RESET << ": " << number_of_processors << "\n";
+  std::cout << ansi::BRIGHT_BLUE << "Available RAM" << ansi::RESET << ": "
+	    << (double)(mi.field.MemAvailable)/(1024*1024)
+	    << " GiB\n";
+  std::cout << ansi::BRIGHT_BLUE << "Uptime" << ansi::RESET << ": " << sys_info.uptime/60 << " minutes\n";
 
   std::cout << ansi::BRIGHT_CYAN << "\nPress any key to continue...\n" << ansi::RESET;
   char_utils::get_char();
